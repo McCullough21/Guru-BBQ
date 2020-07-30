@@ -3,10 +3,15 @@
 }
 .buttons {
   min-height: 10vh;
-  width: 10pc;
+  width: 50pc;
   display: inline-block;
-  flex-direction: column;
+  flex-direction: row;
+  text-align: center;
   align-items: center;
+}
+.button {
+  margin: 10px;
+  width: 15pc;
   font-size: calc(10px + 2vmin);
 }
 
