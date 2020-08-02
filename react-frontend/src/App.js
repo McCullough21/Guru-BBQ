@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import Smokers from "./components/smokers";
 import Recipes from "./components/rubs_sauces";
+import Meats from "./containers/meats";
 
 class App extends Component {
   render() {
@@ -17,16 +18,21 @@ class App extends Component {
               <h3 className="buttons">
                 <Link to="/Smokers">
                   <button className="button">Smokers</button>
-                </Link>{" "}
-                <button className="button">Meats</button>{" "}
+                </Link>
+                <Link to="/Meats">
+                  <button className="button">Meats</button>
+                </Link>
                 <Link to="/Rubs&Sauces">
-                  <button className="button">Rubs / Sauces</button>{" "}
+                  <button className="button">Rubs / Sauces</button>
                 </Link>
               </h3>
             </nav>
             <Switch>
               <Route path="/Smokers">
                 <Smokers />
+              </Route>
+              <Route path="/Meats">
+                <Meats />
               </Route>
               <Route path="/Rubs&Sauces">
                 <Recipes />

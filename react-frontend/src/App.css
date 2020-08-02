@@ -3,9 +3,10 @@
 }
 .buttons {
   min-height: 10vh;
-  width: 50pc;
-  display: inline-block;
+  width: auto;
+  display: flex;
   flex-direction: row;
+  justify-content: center;
   text-align: center;
   align-items: center;
 }
