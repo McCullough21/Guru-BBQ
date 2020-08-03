@@ -4,15 +4,31 @@ import "./App.css";
 import Smokers from "./components/smokers";
 import Recipes from "./components/rubs_sauces";
 import Meats from "./containers/meats";
+import User from "./containers/User";
 
 class App extends Component {
   render() {
     return (
       <div>
         <div className="login">
-          <h3>
-            <button>Login</button> <button>Signup</button>
-          </h3>
+          <Router>
+            <h3>
+              <Link to="/Login">
+                <button>Login</button>
+              </Link>
+              <Link to="/Signup">
+                <button>Signup</button>
+              </Link>
+            </h3>
+            <Switch>
+              <Route path="/Login">
+                <User type="login" />
+              </Route>
+              <Route path="/Signup">
+                <User type="signup" />
+              </Route>
+            </Switch>
+          </Router>
           <h1 className="App-title">Guru BBQ</h1>
         </div>
         <div>
