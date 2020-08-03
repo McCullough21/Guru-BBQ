@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.login {
+  color: white;
+  background-color: #282c34;
+}
 .buttons {
   min-height: 10vh;
   width: auto;
@@ -27,14 +31,14 @@
   }
 }
 
-.App-header {
+.App-title {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 10vmin);
   color: white;
 }
 

@@ -9,8 +9,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="App-header">
-          <h1>Guru BBQ</h1>
+        <div className="login">
+          <h3>
+            <button>Login</button> <button>Signup</button>
+          </h3>
+          <h1 className="App-title">Guru BBQ</h1>
         </div>
         <div>
           <Router>
