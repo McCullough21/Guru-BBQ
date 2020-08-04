@@ -9,6 +9,7 @@ const userReducer = (
   },
   action
 ) => {
+  console.log(action);
   switch (action.type) {
     case "POPULATE_USER":
       return {
@@ -21,7 +22,7 @@ const userReducer = (
       return {
         ...state,
         user: { ...state.user },
-        comments: [action.comments]
+        comments: action.comments
       };
 
     default:

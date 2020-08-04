@@ -7,8 +7,14 @@ class Meats extends React.Component {
     this.props.fetchComments();
   }
 
+  showMeats = () => {
+    return this.props.comments.map(comment => {
+      return <p>{comment.content}</p>;
+    });
+  };
+
   render() {
-    return <div>{this.props.comments}</div>;
+    return <div>{this.showMeats()}</div>;
   }
 }
 

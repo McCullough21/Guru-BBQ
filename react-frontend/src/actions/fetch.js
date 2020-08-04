@@ -6,6 +6,7 @@ export const fetchComments = () => {
         return response.json();
       })
       .then(responseJSON => {
+        console.log(responseJSON);
         dispatch({ type: "POPULATE_COMMENTS", comments: responseJSON });
       });
   };
