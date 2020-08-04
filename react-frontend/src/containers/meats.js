@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchComments } from "../actions/fetch";
+import Comments from "../components/comments";
+
+// pass down handle change and stuff for state and handling new user comments
 
 class Meats extends React.Component {
   componentDidMount() {
@@ -14,7 +17,12 @@ class Meats extends React.Component {
   };
 
   render() {
-    return <div>{this.showMeats()}</div>;
+    return (
+      <div>
+        <h1 style={{ textAlign: "center" }}>MEATS</h1>
+        <p>{this.showMeats()}</p>
+      </div>
+    );
   }
 }
 
