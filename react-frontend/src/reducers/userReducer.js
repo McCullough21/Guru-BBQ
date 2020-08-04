@@ -23,6 +23,9 @@ const userReducer = (
         user: { ...state.user },
         comments: [action.comments]
       };
+
+    default:
+      return state;
   }
 };
 
