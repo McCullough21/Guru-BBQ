@@ -1,9 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchComments } from "../actions/fetch";
 import Comments from "../components/comments";
 import { porkButt } from "../data.js";
 import { ribs } from "../data.js";
+import Ribs from "../components/ribs";
+import PorkButt from "../components/porkButt";
 
 // pass down handle change and stuff for state and handling new user comments
 // send each <Comment> content, date created, username.  Make comments "newComment"
@@ -26,30 +29,47 @@ class Meats extends React.Component {
       <div>
         <h1 style={{ textAlign: "center" }}>MEATS</h1>
         <div>
-          <div>
-            <div>
-              <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
-            </div>
-            <br></br>
-            <div>
-              <button>St. Louis-Style Ribs</button>
-            </div>
-          </div>
-          <br></br>
-          <div>
-            <div>
-              <img
-                src={porkButt.img}
-                alt="porkButt"
-                style={{ width: "300px" }}
-              />
-            </div>
-            <br></br>
-            <div>
-              <button>Pork Butt</button>
-            </div>
-          </div>
+          <Router>
+            <nav>
+              <div>
+                <div>
+                  <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
+                </div>
+                <br></br>
+                <div>
+                  <Link to="/Ribs">
+                    <button>St. Louis-Style Ribs</button>
+                  </Link>
+                </div>
+              </div>
+              <br></br>
+              <div>
+                <div>
+                  <img
+                    src={porkButt.img}
+                    alt="porkButt"
+                    style={{ width: "300px" }}
+                  />
+                </div>
+                <br></br>
+                <div>
+                  <Link to="/PorkButt">
+                    <button>Pork Butt</button>
+                  </Link>
+                </div>
+              </div>
+            </nav>
+            <Switch>
+              <Route path="/Ribs">
+                <Ribs />
+              </Route>
+              <Route path="/PorkButt">
+                <PorkButt />
+              </Route>
+            </Switch>
+          </Router>
         </div>
+
         {this.popComments()}
       </div>
     );
