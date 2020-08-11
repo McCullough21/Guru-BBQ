@@ -26,10 +26,29 @@ class Meats extends React.Component {
       <div>
         <h1 style={{ textAlign: "center" }}>MEATS</h1>
         <div>
-          <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
-        </div>
-        <div>
-          <button>St. Louis-Style Ribs</button>
+          <div>
+            <div>
+              <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
+            </div>
+            <br></br>
+            <div>
+              <button>St. Louis-Style Ribs</button>
+            </div>
+          </div>
+          <br></br>
+          <div>
+            <div>
+              <img
+                src={porkButt.img}
+                alt="porkButt"
+                style={{ width: "300px" }}
+              />
+            </div>
+            <br></br>
+            <div>
+              <button>Pork Butt</button>
+            </div>
+          </div>
         </div>
         {this.popComments()}
       </div>
