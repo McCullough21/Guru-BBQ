@@ -12,3 +12,8 @@ let ribs = {
   img:
     "https://i8.amplience.net/i/traeger/20190628-St-Louis-BBQ-Ribs_RE_HE_M?w=620&sm=aspect&aspect=5:3&scaleFit=poi&$poi2$&fmt=webp"
 };
+
+module.exports = {
+  porkButt,
+  ribs
+};

@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchComments } from "../actions/fetch";
 import Comments from "../components/comments";
+import { porkButt } from "../data.js";
+import { ribs } from "../data.js";
 
 // pass down handle change and stuff for state and handling new user comments
 // send each <Comment> content, date created, username.  Make comments "newComment"
@@ -23,7 +25,13 @@ class Meats extends React.Component {
     return (
       <div>
         <h1 style={{ textAlign: "center" }}>MEATS</h1>
-        <p>{this.popComments()}</p>
+        <div>
+          <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
+        </div>
+        <div>
+          <button>St. Louis-Style Ribs</button>
+        </div>
+        {this.popComments()}
       </div>
     );
   }
