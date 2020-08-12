@@ -29,23 +29,16 @@ class Meats extends React.Component {
         <div>
           <Router>
             <nav>
-              <div>
-                <br></br>
-                <div>
-                  <Link to="/Ribs">
-                    <button>St. Louis-Style Ribs</button>
-                  </Link>
-                </div>
-              </div>
-              <br></br>
-              <div>
-                <br></br>
-                <div>
-                  <Link to="/PorkButt">
-                    <button>Pork Butt</button>
-                  </Link>
-                </div>
-              </div>
+              <Link to="/Ribs">
+                <button style={{ textAlign: "left", marginLeft: "30%" }}>
+                  St. Louis-Style Ribs
+                </button>
+              </Link>
+              <Link to="/PorkButt">
+                <button style={{ marginLeft: "20%", marginRight: "30%" }}>
+                  Pork Butt
+                </button>
+              </Link>
             </nav>
             <Switch>
               <Route path="/Ribs">
