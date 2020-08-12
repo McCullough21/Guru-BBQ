@@ -15,11 +15,11 @@ class Meats extends React.Component {
     this.props.fetchComments();
   }
 
-  popComments = event => {
-    console.log(this.props.comments);
-    return this.props.comments.map(comment => {
-      return <Comments comment={comment} />;
-    });
+  popComments = name => {
+    const meatComments = this.props.comments.filter(
+      comment => comment.meatType === name
+    );
+    return meatComments;
   };
 
   // {this.popComments()} this will be called when link to either meat is called, comments must
@@ -34,24 +34,27 @@ class Meats extends React.Component {
             <nav>
               <Link to="/Ribs">
                 <button
+                  name="ribs"
                   style={{ textAlign: "left", marginLeft: "30%" }}
-                  onClick={event => this.popComments(event)}
                 >
                   St. Louis-Style Ribs
                 </button>
               </Link>
               <Link to="/PorkButt">
-                <button style={{ marginLeft: "20%", marginRight: "30%" }}>
+                <button
+                  name="porkButt"
+                  style={{ marginLeft: "20%", marginRight: "30%" }}
+                >
                   Pork Butt
                 </button>
               </Link>
             </nav>
             <Switch>
               <Route path="/Ribs">
-                <Ribs />
+                <Ribs comments={this.popComments("ribs")} />
               </Route>
               <Route path="/PorkButt">
-                <PorkButt />
+                <PorkButt comments={this.popComments("porkButt")} />
               </Route>
             </Switch>
           </Router>

@@ -7,4 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: "jenna", password: "happy")
-Comment.create(content: "Cooked pork butt at 275 degrees until internal temp of 160.  Wrapped in foil and maintained temp until internal temp hit 198.", user_id: 1, user_username: "jenna")
+Comment.create(content: "Cooked pork butt at 275 degrees until internal temp of 160.  Wrapped in foil and maintained temp until internal temp hit 198.", user_id: 1, user_username: "jenna", meatType: "ribs")
+Comment.create(content: "Cooked pork butt at 250 degrees until internal temp of 160.  Wrapped in foil and maintained temp until internal temp hit 198.", user_id: 1, user_username: "jenna", meatType: "porkButt")
+Comment.create(content: "Cooked pork butt at 200 degrees until internal temp of 160.  Wrapped in foil and maintained temp until internal temp hit 198.", user_id: 1, user_username: "jenna", meatType: "porkButt")
+Comment.create(content: "Cooked pork butt at 300 degrees until internal temp of 160.  Wrapped in foil and maintained temp until internal temp hit 198.", user_id: 1, user_username: "jenna", meatType: "ribs")
