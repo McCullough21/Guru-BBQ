@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchComments } from "../actions/fetch";
 import Comments from "../components/comments";
-import { porkButt } from "../data.js";
-import { ribs } from "../data.js";
 import Ribs from "../components/ribs";
 import PorkButt from "../components/porkButt";
 
@@ -32,9 +30,6 @@ class Meats extends React.Component {
           <Router>
             <nav>
               <div>
-                <div>
-                  <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
-                </div>
                 <br></br>
                 <div>
                   <Link to="/Ribs">
@@ -44,13 +39,6 @@ class Meats extends React.Component {
               </div>
               <br></br>
               <div>
-                <div>
-                  <img
-                    src={porkButt.img}
-                    alt="porkButt"
-                    style={{ width: "300px" }}
-                  />
-                </div>
                 <br></br>
                 <div>
                   <Link to="/PorkButt">
