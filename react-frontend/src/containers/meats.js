@@ -15,12 +15,15 @@ class Meats extends React.Component {
     this.props.fetchComments();
   }
 
-  popComments = () => {
+  popComments = event => {
     console.log(this.props.comments);
     return this.props.comments.map(comment => {
       return <Comments comment={comment} />;
     });
   };
+
+  // {this.popComments()} this will be called when link to either meat is called, comments must
+  // be mapped for the right meat to display
 
   render() {
     return (
@@ -30,7 +33,10 @@ class Meats extends React.Component {
           <Router>
             <nav>
               <Link to="/Ribs">
-                <button style={{ textAlign: "left", marginLeft: "30%" }}>
+                <button
+                  style={{ textAlign: "left", marginLeft: "30%" }}
+                  onClick={event => this.popComments(event)}
+                >
                   St. Louis-Style Ribs
                 </button>
               </Link>
@@ -50,8 +56,6 @@ class Meats extends React.Component {
             </Switch>
           </Router>
         </div>
-
-        {this.popComments()}
       </div>
     );
   }
