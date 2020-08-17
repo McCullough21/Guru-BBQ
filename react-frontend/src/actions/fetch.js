@@ -12,7 +12,7 @@ export const fetchComments = () => {
   };
 };
 
-export const postComment = (username, id, content) => {
+export const postComment = (username = "todd", id = 2, content) => {
   fetch("http://localhost:3000/comments", {
     method: "POST",
     headers: {

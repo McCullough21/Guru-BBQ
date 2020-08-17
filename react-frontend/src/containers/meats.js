@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchComments } from "../actions/fetch";
+import { fetchComments, postComment } from "../actions/fetch";
 import Comments from "../components/comments";
 import Ribs from "../components/ribs";
 import PorkButt from "../components/porkButt";
@@ -37,10 +37,7 @@ class Meats extends React.Component {
   handleSubmit = event => {
     console.log(this.state.comment);
     event.preventDefault();
-    // this.props.add(this.state.text);
-    // this.setState({
-    //   text: ""
-    // });
+    postComment("steve", 2, this.state.comment);
   };
 
   render() {
