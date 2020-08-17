@@ -11,6 +11,12 @@ import PorkButt from "../components/porkButt";
 // TRY to not have to use store retrieval for new comment posting on page
 
 class Meats extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: ""
+    };
+  }
   componentDidMount() {
     this.props.fetchComments();
   }
@@ -22,8 +28,19 @@ class Meats extends React.Component {
     return meatComments;
   };
 
-  // {this.popComments()} this will be called when link to either meat is called, comments must
-  // be mapped for the right meat to display
+  handleChange = event => {
+    this.setState({
+      comment: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    // this.props.add(this.state.text);
+    // this.setState({
+    //   text: ""
+    // });
+  };
 
   render() {
     return (
@@ -51,10 +68,16 @@ class Meats extends React.Component {
             </nav>
             <Switch>
               <Route path="/Ribs">
-                <Ribs comments={this.popComments("ribs")} />
+                <Ribs
+                  comments={this.popComments("ribs")}
+                  input={this.handleChange}
+                />
               </Route>
               <Route path="/PorkButt">
-                <PorkButt comments={this.popComments("porkButt")} />
+                <PorkButt
+                  comments={this.popComments("porkButt")}
+                  input={this.handleChange}
+                />
               </Route>
             </Switch>
           </Router>

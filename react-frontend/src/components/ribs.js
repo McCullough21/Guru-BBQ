@@ -14,6 +14,8 @@ export default function Ribs(props) {
       <div>
         <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
       </div>
+      <br></br>
+      <button>New Comment</button>
       {coms}
     </div>
   );
