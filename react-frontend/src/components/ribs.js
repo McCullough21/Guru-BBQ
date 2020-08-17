@@ -1,7 +1,7 @@
 import React from "react";
 import { ribs } from "../data.js";
 import { checkPropTypes } from "prop-types";
-import Comments from "../components/comments";
+import Comments from "./comments";
 
 export default function Ribs(props) {
   let coms = props.comments.map(comment => {
@@ -15,7 +15,15 @@ export default function Ribs(props) {
         <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
       </div>
       <br></br>
-      <button>New Comment</button>
+
+      <form>
+        <label>
+          New Comment <br></br>
+          <input type="text" style={{ height: "120px", width: "300px" }} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+
       {coms}
     </div>
   );

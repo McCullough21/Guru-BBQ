@@ -71,12 +71,14 @@ class Meats extends React.Component {
                 <Ribs
                   comments={this.popComments("ribs")}
                   input={this.handleChange}
+                  currentUser={this.props.user}
                 />
               </Route>
               <Route path="/PorkButt">
                 <PorkButt
                   comments={this.popComments("porkButt")}
                   input={this.handleChange}
+                  currentUser={this.props.user}
                 />
               </Route>
             </Switch>
@@ -88,7 +90,10 @@ class Meats extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { comments: state.comments };
+  return {
+    comments: state.comments,
+    user: state.user
+  };
 };
 
 const mapDispatchToProps = dispatch => {

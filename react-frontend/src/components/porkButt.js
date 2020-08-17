@@ -1,6 +1,6 @@
 import React from "react";
 import { porkButt } from "../data.js";
-import Comments from "../components/comments";
+import Comments from "./comments";
 
 export default function PorkButt(props) {
   let coms = props.comments.map(comment => {
