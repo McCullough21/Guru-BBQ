@@ -13,6 +13,24 @@ export default function PorkButt(props) {
       <div>
         <img src={porkButt.img} alt="porkButt" style={{ width: "300px" }} />
       </div>
+      <form
+        onSubmit={event => {
+          props.submit(event);
+        }}
+      >
+        <label>
+          New Comment <br></br>
+          <input
+            type="text"
+            style={{ height: "120px", width: "300px" }}
+            onChange={event => {
+              props.input(event);
+            }}
+          />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+
       {coms}
     </div>
   );

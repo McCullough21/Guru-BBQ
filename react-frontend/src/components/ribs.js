@@ -16,10 +16,20 @@ export default function Ribs(props) {
       </div>
       <br></br>
 
-      <form>
+      <form
+        onSubmit={event => {
+          props.submit(event);
+        }}
+      >
         <label>
           New Comment <br></br>
-          <input type="text" style={{ height: "120px", width: "300px" }} />
+          <input
+            type="text"
+            style={{ height: "120px", width: "300px" }}
+            onChange={event => {
+              props.input(event);
+            }}
+          />
         </label>
         <input type="submit" value="Submit" />
       </form>
