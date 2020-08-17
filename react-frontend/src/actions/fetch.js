@@ -12,15 +12,13 @@ export const fetchComments = () => {
   };
 };
 
-// export const fetchCats = () => {
-//   return dispatch => {
-//     dispatch({ type: "LOADING_CATS" });
-//     fetch("https://learn-co-curriculum.github.io/cat-api/cats.json")
-//       .then(response => {
-//         return response.json();
-//       })
-//       .then(responseJSON => {
-//         dispatch({ type: "ADD_CATS", cats: responseJSON.images });
-//       });
-//   };
-// };
+export const postComment = (username, id, content) => {
+  fetch("http://localhost:3000/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({ username: username, id: id, content: content })
+  });
+};

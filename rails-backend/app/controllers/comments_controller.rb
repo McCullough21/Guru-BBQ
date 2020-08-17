@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     end
 
     def create
+        params.inspect
         @comment = Comment.create(content: params[:content], user_id: params[:id], user_username: params[:username])
 
     end
