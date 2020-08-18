@@ -22,10 +22,10 @@ class App extends Component {
             </h3>
             <Switch>
               <Route path="/Login">
-                <User type="login" />
+                <User type="Login" />
               </Route>
               <Route path="/Signup">
-                <User type="signup" />
+                <User type="Sign-up" />
               </Route>
             </Switch>
           </Router>
