@@ -22,3 +22,14 @@ export const postComment = (username = "todd", id = 2, content) => {
     body: JSON.stringify({ username: username, id: id, content: content })
   });
 };
+
+export const userSignup = (username, password) => {
+  fetch("http://localhost:3000/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({ username: username, password: password })
+  });
+};
