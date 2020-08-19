@@ -2,6 +2,9 @@ class UsersController < ApplicationController
    def create
         @user = User.create(username: params[:username], password: params[:password])
     end
+    def index
+        @user = User.find_by(id: params[:id])
+    end
 
     def show
         @user = User.find_by(username: params[:username])
@@ -11,3 +14,4 @@ class UsersController < ApplicationController
         
     end
 end
+

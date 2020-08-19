@@ -26,10 +26,10 @@ class User extends React.Component {
     let username = this.state.username;
     let password = this.state.password;
     // event.preventDefault();
-    if (this.props.type === "Sign-up") {
-      userSignup(username, password);
-    } else {
+    if (this.props.type === "Login") {
       this.props.userLogin(username, password);
+    } else {
+      userSignup(username, password);
     }
     this.setState({
       username: "",
