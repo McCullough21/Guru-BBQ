@@ -27,7 +27,6 @@ export const userLogin = (username, password) => {
   console.log(username);
   console.log(password);
   return dispatch => {
-    dispatch({ type: "FINDING_USER" });
     fetch(`http://localhost:3000/users/${username}/${password}`)
       .then(response => {
         return response.json();

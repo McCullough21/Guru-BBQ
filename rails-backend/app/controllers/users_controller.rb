@@ -3,7 +3,8 @@ class UsersController < ApplicationController
         @user = User.create(username: params[:username], password: params[:password])
     end
     def index
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(username: params[:username])
+        render json: @user.to_json
     end
 
     def show
@@ -11,7 +12,9 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password])
             render json: @user.to_json
         end
-        
     end
+    
+    
+    
 end
 

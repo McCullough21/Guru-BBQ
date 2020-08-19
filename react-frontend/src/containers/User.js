@@ -23,18 +23,18 @@ class User extends React.Component {
   handleSubmit = event => {
     console.log(this.props.type);
     event.preventDefault();
-    let username = this.state.username;
-    let password = this.state.password;
-    // event.preventDefault();
+    // let username = this.state.username;
+    // let password = this.state.password;
     if (this.props.type === "Login") {
-      this.props.userLogin(username, password);
-    } else {
-      userSignup(username, password);
+      this.props.Login(this.state.username, this.state.password);
     }
-    this.setState({
-      username: "",
-      password: ""
-    });
+    // else {
+    //   userSignup(username, password);
+    // }
+    // this.setState({
+    //   username: "",
+    //   password: ""
+    // });
 
     // add action fetch here with params.
     // onSignup maybe populate user in store, else login
@@ -74,7 +74,7 @@ class User extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    userLogin: () => dispatch(userLogin())
+    Login: (username, password) => dispatch(userLogin(username, password))
   };
 };
 
