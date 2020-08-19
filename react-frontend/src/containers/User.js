@@ -1,6 +1,7 @@
 import React from "react";
 import { userSignup } from "../actions/fetch";
 import { userLogin } from "../actions/fetch";
+import { connect } from "react-redux";
 
 class User extends React.Component {
   constructor() {
@@ -20,15 +21,15 @@ class User extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(event);
-
+    console.log(this.props.type);
+    event.preventDefault();
     let username = this.state.username;
     let password = this.state.password;
     // event.preventDefault();
     if (this.props.type === "Sign-up") {
       userSignup(username, password);
     } else {
-      userLogin(username, password);
+      this.props.userLogin(username, password);
     }
     this.setState({
       username: "",
@@ -71,4 +72,10 @@ class User extends React.Component {
   }
 }
 
-export default User;
+const mapDispatchToProps = dispatch => {
+  return {
+    userLogin: () => dispatch(userLogin())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(User);
