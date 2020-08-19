@@ -23,6 +23,21 @@ export const postComment = (username = "todd", id = 2, content) => {
   });
 };
 
+export const userLogin = (username, password) => {
+  console.log(username);
+  return dispatch => {
+    dispatch({ type: "POPULATE_USER" });
+    fetch(`http://localhost:3000/users/${username}/${password}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(responseJSON => {
+        console.log(responseJSON);
+        dispatch({ type: "POPULATE_USER", info: responseJSON });
+      });
+  };
+};
+
 export const userSignup = (username, password) => {
   fetch("http://localhost:3000/users", {
     method: "POST",

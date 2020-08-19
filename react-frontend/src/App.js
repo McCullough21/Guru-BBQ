@@ -5,6 +5,7 @@ import Smokers from "./components/smokers";
 import Recipes from "./components/rubs_sauces";
 import Meats from "./containers/meats";
 import User from "./containers/User";
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
@@ -30,6 +31,8 @@ class App extends Component {
             </Switch>
           </Router>
           <h1 className="App-title">Guru BBQ</h1>
+          <br></br>
+          <h3>{this.props.user.username}</h3>
         </div>
         <div>
           <Router>
@@ -64,4 +67,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+export default connect(mapStateToProps)(App);

@@ -1,5 +1,6 @@
 import React from "react";
 import { userSignup } from "../actions/fetch";
+import { userLogin } from "../actions/fetch";
 
 class User extends React.Component {
   constructor() {
@@ -11,6 +12,7 @@ class User extends React.Component {
   }
 
   handleChange = event => {
+    console.log(this.props.type);
     console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value
@@ -19,10 +21,20 @@ class User extends React.Component {
 
   handleSubmit = event => {
     console.log(event);
+
     let username = this.state.username;
     let password = this.state.password;
     // event.preventDefault();
-    userSignup(username, password);
+    if (this.props.type === "Sign-up") {
+      userSignup(username, password);
+    } else {
+      userLogin(username, password);
+    }
+    this.setState({
+      username: "",
+      password: ""
+    });
+
     // add action fetch here with params.
     // onSignup maybe populate user in store, else login
   };
