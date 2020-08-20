@@ -51,6 +51,8 @@ export const userSignup = (username, password) => {
       .then(response => {
         return response.json();
       })
-      .then(json => console.log(json));
+      .then(json => {
+        dispatch({ type: "POPULATE_USER", info: json });
+      });
   };
 };

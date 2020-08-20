@@ -34,9 +34,6 @@ class User extends React.Component {
       username: "",
       password: ""
     });
-
-    // add action fetch here with params.
-    // onSignup maybe populate user in store, else login
   };
 
   render() {
