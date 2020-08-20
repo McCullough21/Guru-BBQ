@@ -38,6 +38,7 @@ class User extends React.Component {
     // add action fetch here with params.
     // onSignup maybe populate user in store, else login
   };
+
   render() {
     return (
       <div>
@@ -70,6 +71,7 @@ class User extends React.Component {
     );
   }
 }
+// login signup, map state to props, if logged in redirect.  dispatch on promise form signup
 
 const mapDispatchToProps = dispatch => {
   return {
