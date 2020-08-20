@@ -11,16 +11,35 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="login">
+        <div>
           <Router>
-            <h3>
-              <Link to="/Login">
-                <button>Login</button>
+            <div className="login">
+              <h3>
+                <Link to="/Login">
+                  <button>Login</button>
+                </Link>
+                <Link to="/Signup">
+                  <button>Signup</button>
+                </Link>
+              </h3>
+              <h3 style={{ textAlign: "right", marginRight: "10%" }}>
+                {this.props.user.username}
+              </h3>
+              <h1 className="App-title">Guru BBQ</h1>
+            </div>
+            <br></br>
+            <h3 className="buttons">
+              <Link to="/Smokers">
+                <button className="button">Smokers</button>
               </Link>
-              <Link to="/Signup">
-                <button>Signup</button>
+              <Link to="/Meats">
+                <button className="button">Meats</button>
+              </Link>
+              <Link to="/Rubs&Sauces">
+                <button className="button">Rubs / Sauces</button>
               </Link>
             </h3>
+
             <Switch>
               <Route path="/Login">
                 <User type="Login" />
@@ -28,28 +47,6 @@ class App extends Component {
               <Route path="/Signup">
                 <User type="Sign-up" />
               </Route>
-            </Switch>
-          </Router>
-          <h1 className="App-title">Guru BBQ</h1>
-          <br></br>
-          <h3>{this.props.user.username}</h3>
-        </div>
-        <div>
-          <Router>
-            <nav>
-              <h3 className="buttons">
-                <Link to="/Smokers">
-                  <button className="button">Smokers</button>
-                </Link>
-                <Link to="/Meats">
-                  <button className="button">Meats</button>
-                </Link>
-                <Link to="/Rubs&Sauces">
-                  <button className="button">Rubs / Sauces</button>
-                </Link>
-              </h3>
-            </nav>
-            <Switch>
               <Route path="/Smokers">
                 <Smokers />
               </Route>

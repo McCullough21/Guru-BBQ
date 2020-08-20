@@ -39,12 +39,18 @@ export const userLogin = (username, password) => {
 };
 
 export const userSignup = (username, password) => {
-  fetch("http://localhost:3000/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({ username: username, password: password })
-  });
+  return dispatch => {
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({ username: username, password: password })
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(json => console.log(json));
+  };
 };

@@ -27,14 +27,13 @@ class User extends React.Component {
     // let password = this.state.password;
     if (this.props.type === "Login") {
       this.props.Login(this.state.username, this.state.password);
+    } else {
+      this.props.Signup(this.state.username, this.state.password);
     }
-    // else {
-    //   userSignup(username, password);
-    // }
-    // this.setState({
-    //   username: "",
-    //   password: ""
-    // });
+    this.setState({
+      username: "",
+      password: ""
+    });
 
     // add action fetch here with params.
     // onSignup maybe populate user in store, else login
@@ -74,7 +73,8 @@ class User extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    Login: (username, password) => dispatch(userLogin(username, password))
+    Login: (username, password) => dispatch(userLogin(username, password)),
+    Signup: (username, password) => dispatch(userSignup(username, password))
   };
 };
 
