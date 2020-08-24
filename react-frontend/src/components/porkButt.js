@@ -21,6 +21,7 @@ export default function PorkButt(props) {
         <label>
           New Comment <br></br>
           <input
+            name={props.meatType}
             type="text"
             style={{ height: "120px", width: "300px" }}
             onChange={event => {

@@ -12,14 +12,20 @@ export const fetchComments = () => {
   };
 };
 
-export const postComment = (username = "todd", id = 2, content) => {
+export const postComment = (username, id, content, meat) => {
+  console.log(username, id, content);
   fetch("http://localhost:3000/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json"
     },
-    body: JSON.stringify({ username: username, id: id, content: content })
+    body: JSON.stringify({
+      username: username,
+      id: id,
+      content: content,
+      meatType: meat
+    })
   });
 };
 

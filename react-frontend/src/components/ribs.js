@@ -17,6 +17,7 @@ export default function Ribs(props) {
       <br></br>
 
       <form
+        name={props.meatType}
         onSubmit={event => {
           props.submit(event);
         }}
