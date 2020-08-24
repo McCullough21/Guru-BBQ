@@ -12,9 +12,9 @@ export const fetchComments = () => {
   };
 };
 
-export const postComment = (username, id, content, meat) => {
+export const postComment = async (username, id, content, meat) => {
   console.log(username, id, content);
-  fetch("http://localhost:3000/comments", {
+  await fetch("http://localhost:3000/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

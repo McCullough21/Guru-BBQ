@@ -46,7 +46,7 @@ class Meats extends React.Component {
     this.setState({
       comment: ""
     });
-    this.props.fetchComments();
+    this.componentDidMount();
   };
 
   render() {
