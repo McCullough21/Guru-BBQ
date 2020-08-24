@@ -5,6 +5,10 @@ import Comments from "./comments";
 
 export default function Ribs(props) {
   let coms = props.comments.map(comment => {
+    return comment;
+  });
+  let reverseList = coms.reverse();
+  let comList = reverseList.map(comment => {
     return <Comments comment={comment} />;
   });
 
@@ -30,12 +34,13 @@ export default function Ribs(props) {
             onChange={event => {
               props.input(event);
             }}
+            value={props.currentState}
           />
         </label>
         <input type="submit" value="Submit" />
       </form>
 
-      {coms}
+      {comList}
     </div>
   );
 }

@@ -35,7 +35,7 @@ class Meats extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(event.target.name);
+    console.log(this.props.user);
     event.preventDefault();
     postComment(
       this.props.user.username,
@@ -87,6 +87,7 @@ class Meats extends React.Component {
                   input={this.handleChange}
                   submit={this.handleSubmit}
                   currentUser={this.props.user}
+                  currentState={this.state.comment}
                   meatType="ribs"
                 />
               </Route>
@@ -96,6 +97,7 @@ class Meats extends React.Component {
                   input={this.handleChange}
                   submit={this.handleSubmit}
                   currentUser={this.props.user}
+                  currentState={this.state.comment}
                   meatType="porkButt"
                 />
               </Route>
