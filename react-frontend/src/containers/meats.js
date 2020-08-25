@@ -57,14 +57,14 @@ class Meats extends React.Component {
         <h1 style={{ textAlign: "center" }}>MEATS</h1>
         <div>
           <Router>
-            <nav>
+            <nav style={{ height: "40px", width: "100%", margin: "20px" }}>
               <Link to="/Ribs">
                 <button
                   name="ribs"
                   style={{
-                    margin: "10px",
-                    textAlign: "center",
-                    marginLeft: "35%"
+                    float: "left",
+                    position: "relative",
+                    left: "30%"
                   }}
                 >
                   St. Louis-Style Ribs
@@ -74,8 +74,9 @@ class Meats extends React.Component {
                 <button
                   name="porkButt"
                   style={{
-                    margin: "10px",
-                    textAlign: "center"
+                    float: "right",
+                    position: "relative",
+                    right: "40%"
                   }}
                 >
                   Pork Butt

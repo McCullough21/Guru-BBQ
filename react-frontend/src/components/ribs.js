@@ -15,10 +15,28 @@ export default function Ribs(props) {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>RIBS</h2>
-      <div>
-        <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
-        <h3>Cooking Instructions:</h3>
-        <p>{ribs.cooking}</p>
+      <div style={{ display: "table", height: "200px", width: "100%" }}>
+        <div
+          style={{
+            display: "column",
+            width: "40%",
+            float: "left",
+            padding: "15px"
+          }}
+        >
+          <img src={ribs.img} alt="ribs" />
+        </div>
+        <div
+          style={{
+            display: "column",
+            width: "45%",
+            float: "right",
+            padding: "15px"
+          }}
+        >
+          <h3>Cooking Instructions:</h3>
+          <p>{ribs.cooking}</p>
+        </div>
       </div>
       <br></br>
 

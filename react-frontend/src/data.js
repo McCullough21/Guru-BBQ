@@ -21,8 +21,17 @@ let offSet = {
     "https://www.charbroil.com/media/catalog/product/optimized/f/9/f9a5fd49e4ae3822dd44d1db4fee7f7c/x18202079_40in-offset-smoker_002_1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rw+ri+rm+cp+md+ia=100+im=-1.ic.oAzcVFgK5p.webp"
 };
 
+let drumSmoker = {
+  type: "Pit Barrel",
+  description:
+    "All in one chamber for cooking and heating element. Charcoal and smoking wood goes in a bucket at the bottom of the barrel.",
+  img:
+    "https://images.homedepot-static.com/productImages/ec78831b-55b8-43f9-90c6-be62f7433eac/svn/pit-barrel-cooker-charcoal-smokers-212-77_1000.jpg"
+};
+
 module.exports = {
   porkButt,
   ribs,
-  offSet
+  offSet,
+  drumSmoker
 };

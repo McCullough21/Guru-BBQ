@@ -15,11 +15,30 @@ export default function PorkButt(props) {
     <div>
       <h2 style={{ textAlign: "center" }}>PORK BUTT</h2>
 
-      <div>
-        <img src={porkButt.img} alt="porkButt" style={{ width: "300px" }} />
-        <h3>Cooking Instructions:</h3>
-        <p>{porkButt.cooking}</p>
+      <div style={{ display: "table", height: "200px", width: "100%" }}>
+        <div
+          style={{
+            display: "column",
+            width: "45%",
+            float: "left",
+            padding: "15px"
+          }}
+        >
+          <img src={porkButt.img} alt="porkButt" style={{ maxWidth: "100%" }} />
+        </div>
+        <div
+          style={{
+            display: "column",
+            width: "45%",
+            float: "right",
+            padding: "15px"
+          }}
+        >
+          <h3>Cooking Instructions:</h3>
+          <p>{porkButt.cooking}</p>
+        </div>
       </div>
+      <br></br>
       <form
         name={props.meatType}
         onSubmit={event => {
