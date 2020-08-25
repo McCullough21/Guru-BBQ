@@ -13,8 +13,6 @@ class User extends React.Component {
   }
 
   handleChange = event => {
-    console.log(this.props.type);
-    console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value
     });
