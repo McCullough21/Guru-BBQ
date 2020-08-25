@@ -9,7 +9,7 @@ import PorkButt from "../components/porkButt";
 // pass down handle change and stuff for state and handling new user comments
 // send each <Comment> content, date created, username.  Make comments "newComment"
 // TRY to not have to use store retrieval for new comment posting on page
-
+// Cook at 275° until internal temp reaches 160°-170°.Wrap in foil and finish at 195°-200°.Let rest for 1 - 2 hours before pulling.
 class Meats extends React.Component {
   constructor() {
     super();
@@ -34,10 +34,10 @@ class Meats extends React.Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     console.log(this.props.user);
     event.preventDefault();
-    postComment(
+    await postComment(
       this.props.user.username,
       this.props.user.id,
       this.state.comment,
