@@ -13,7 +13,16 @@ let ribs = {
     "https://i8.amplience.net/i/traeger/20190628-St-Louis-BBQ-Ribs_RE_HE_M?w=620&sm=aspect&aspect=5:3&scaleFit=poi&$poi2$&fmt=webp"
 };
 
+let offSet = {
+  type: "Offset Smoker",
+  description:
+    "Also know as a stick burner.  Offset smokers have a main smoking chamber with the firebox set off to the side.",
+  img:
+    "https://www.charbroil.com/media/catalog/product/optimized/f/9/f9a5fd49e4ae3822dd44d1db4fee7f7c/x18202079_40in-offset-smoker_002_1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rw+ri+rm+cp+md+ia=100+im=-1.ic.oAzcVFgK5p.webp"
+};
+
 module.exports = {
   porkButt,
-  ribs
+  ribs,
+  offSet
 };
