@@ -17,6 +17,8 @@ export default function PorkButt(props) {
 
       <div>
         <img src={porkButt.img} alt="porkButt" style={{ width: "300px" }} />
+        <h3>Cooking Instructions:</h3>
+        <p>{porkButt.cooking}</p>
       </div>
       <form
         name={props.meatType}

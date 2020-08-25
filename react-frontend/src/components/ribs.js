@@ -17,6 +17,8 @@ export default function Ribs(props) {
       <h2 style={{ textAlign: "center" }}>RIBS</h2>
       <div>
         <img src={ribs.img} alt="ribs" style={{ width: "300px" }} />
+        <h3>Cooking Instructions:</h3>
+        <p>{ribs.cooking}</p>
       </div>
       <br></br>
 
