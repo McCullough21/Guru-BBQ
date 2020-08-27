@@ -29,9 +29,38 @@ let drumSmoker = {
     "https://images.homedepot-static.com/productImages/ec78831b-55b8-43f9-90c6-be62f7433eac/svn/pit-barrel-cooker-charcoal-smokers-212-77_1000.jpg"
 };
 
+let bbqRub = {
+  type: "Barbecue Rub",
+  ingredients: [
+    "1 cup Kosher Salt",
+    "1 cup Black Pepper",
+    "1/2 cup Sugar",
+    "1/2 cup Granulated Onion",
+    "1/2 cup Granulated Garlic",
+    "1/4 cup Cayenne Pepper",
+    "1 tablespoon Cummin"
+  ]
+};
+
+let bbqSauce = {
+  type: "Barbecue Sauce",
+  ingredients: [
+    "1 cup Brown Sugar",
+    "1 cup Ketchup",
+    "1/4 cup Cider Vinegar",
+    "1/4 cup water",
+    "1 tablespoon Worcestershire Sauce",
+    "1/2 tablespoon Paprika",
+    "1/2 tablespoon Salt",
+    "1/2 tablespoon Black Pepper"
+  ]
+};
+
 module.exports = {
   porkButt,
   ribs,
   offSet,
-  drumSmoker
+  drumSmoker,
+  bbqRub,
+  bbqSauce
 };
