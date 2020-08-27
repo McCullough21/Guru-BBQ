@@ -8,19 +8,24 @@ import User from "./containers/User";
 import { connect } from "react-redux";
 
 class App extends Component {
+  log = () => {
+    this.props.dispatch({ type: "LOGOUT" });
+  };
+
   render() {
     return (
       <div>
         <div>
           <Router>
             <div className="login">
-              <h3>
+              <h3 style={{ display: "table", height: "20px", width: "100%" }}>
                 <Link to="/Login">
                   <button>Login</button>
                 </Link>
                 <Link to="/Signup">
                   <button>Signup</button>
                 </Link>
+                <button onClick={this.log}>Logout</button>
               </h3>
               <h3 style={{ textAlign: "right", marginRight: "10%" }}>
                 {this.props.user.username}

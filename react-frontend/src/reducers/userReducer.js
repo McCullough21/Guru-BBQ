@@ -11,6 +11,13 @@ const userReducer = (
 ) => {
   console.log(action);
   switch (action.type) {
+    case "LOGOUT":
+      return {
+        ...state,
+        user: [],
+        comments: [...state.comments]
+      };
+
     case "POPULATE_USER":
       return {
         ...state,
