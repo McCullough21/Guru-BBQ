@@ -34,6 +34,7 @@ let bbqRub = {
   ingredients: [
     "1 cup Kosher Salt",
     "1 cup Black Pepper",
+    "1/2 cup Paprika",
     "1/2 cup Sugar",
     "1/2 cup Granulated Onion",
     "1/2 cup Granulated Garlic",

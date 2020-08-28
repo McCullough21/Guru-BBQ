@@ -25,7 +25,9 @@ class App extends Component {
                 <Link to="/Signup">
                   <button>Signup</button>
                 </Link>
-                <button onClick={this.log}>Logout</button>
+                <button onClick={this.log} style={{ float: "right" }}>
+                  Logout
+                </button>
               </h3>
               <h3 style={{ textAlign: "right", marginRight: "10%" }}>
                 {this.props.user.username}
