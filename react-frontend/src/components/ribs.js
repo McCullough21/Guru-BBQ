@@ -39,7 +39,7 @@ export default function Ribs(props) {
         </div>
       </div>
       <br></br>
-
+      <h3 style={{ color: "red" }}>*{props.loggedIn()}</h3>
       <form
         name={props.meatType}
         onSubmit={event => {

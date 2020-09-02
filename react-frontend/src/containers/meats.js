@@ -2,15 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchComments, postComment } from "../actions/fetch";
-import Comments from "../components/comments";
 import Ribs from "../components/ribs";
 import PorkButt from "../components/porkButt";
-import FlashMessage from "react-flash-message";
 
-// pass down handle change and stuff for state and handling new user comments
-// send each <Comment> content, date created, username.  Make comments "newComment"
-// TRY to not have to use store retrieval for new comment posting on page
-// Cook at 275° until internal temp reaches 160°-170°.Wrap in foil and finish at 195°-200°.Let rest for 1 - 2 hours before pulling.
 class Meats extends React.Component {
   constructor() {
     super();
@@ -51,12 +45,12 @@ class Meats extends React.Component {
         },
         this.props.fetchComments()
       );
-    } else {
-      return (
-        <FlashMessage duration={2000}>
-          <strong>You must be logged in to post a comment.</strong>
-        </FlashMessage>
-      );
+    }
+  };
+
+  logged_in = () => {
+    if (!this.props.user.username) {
+      return "You must be logged in to post a comment";
     }
   };
 
@@ -101,6 +95,7 @@ class Meats extends React.Component {
                   currentUser={this.props.user}
                   currentState={this.state.comment}
                   meatType="ribs"
+                  loggedIn={this.logged_in}
                 />
               </Route>
               <Route path="/PorkButt">
@@ -111,6 +106,7 @@ class Meats extends React.Component {
                   currentUser={this.props.user}
                   currentState={this.state.comment}
                   meatType="porkButt"
+                  loggedIn={this.logged_in}
                 />
               </Route>
             </Switch>

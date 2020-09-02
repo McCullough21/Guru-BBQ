@@ -39,6 +39,7 @@ export default function PorkButt(props) {
         </div>
       </div>
       <br></br>
+      <h3 style={{ color: "red" }}>*{props.loggedIn()}</h3>
       <form
         name={props.meatType}
         onSubmit={event => {
@@ -46,7 +47,8 @@ export default function PorkButt(props) {
         }}
       >
         <label>
-          New Comment <br></br>
+          New Comment
+          <br></br>
           <input
             type="text"
             style={{ height: "120px", width: "300px" }}
