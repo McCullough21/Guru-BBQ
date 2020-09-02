@@ -5,6 +5,7 @@ import { fetchComments, postComment } from "../actions/fetch";
 import Comments from "../components/comments";
 import Ribs from "../components/ribs";
 import PorkButt from "../components/porkButt";
+import FlashMessage from "react-flash-message";
 
 // pass down handle change and stuff for state and handling new user comments
 // send each <Comment> content, date created, username.  Make comments "newComment"
@@ -37,18 +38,26 @@ class Meats extends React.Component {
   handleSubmit = async event => {
     console.log(this.props.user);
     event.preventDefault();
-    await postComment(
-      this.props.user.username,
-      this.props.user.id,
-      this.state.comment,
-      event.target.name
-    );
-    this.setState(
-      {
-        comment: ""
-      },
-      this.props.fetchComments()
-    );
+    if (this.props.user) {
+      await postComment(
+        this.props.user.username,
+        this.props.user.id,
+        this.state.comment,
+        event.target.name
+      );
+      this.setState(
+        {
+          comment: ""
+        },
+        this.props.fetchComments()
+      );
+    } else {
+      return (
+        <FlashMessage duration={2000}>
+          <strong>You must be logged in to post a comment.</strong>
+        </FlashMessage>
+      );
+    }
   };
 
   render() {
