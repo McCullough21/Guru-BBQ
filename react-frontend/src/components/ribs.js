@@ -12,6 +12,31 @@ export default function Ribs(props) {
     return <Comments comment={comment} />;
   });
 
+  let formDisplay = () => {
+    if (!props.loggedIn()) {
+      return (
+        <form
+          name={props.meatType}
+          onSubmit={event => {
+            props.submit(event);
+          }}
+        >
+          <label>
+            New Comment <br></br>
+            <input
+              type="text"
+              style={{ height: "120px", width: "300px" }}
+              onChange={event => {
+                props.input(event);
+              }}
+              value={props.currentState}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      );
+    }
+  };
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>RIBS</h2>
@@ -39,26 +64,8 @@ export default function Ribs(props) {
         </div>
       </div>
       <br></br>
-      <h3 style={{ color: "red" }}>*{props.loggedIn()}</h3>
-      <form
-        name={props.meatType}
-        onSubmit={event => {
-          props.submit(event);
-        }}
-      >
-        <label>
-          New Comment <br></br>
-          <input
-            type="text"
-            style={{ height: "120px", width: "300px" }}
-            onChange={event => {
-              props.input(event);
-            }}
-            value={props.currentState}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
+      {formDisplay()}
 
       {comList}
     </div>

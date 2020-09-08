@@ -21,8 +21,6 @@ class User extends React.Component {
   handleSubmit = event => {
     console.log(this.props.type);
     event.preventDefault();
-    // let username = this.state.username;
-    // let password = this.state.password;
     if (this.props.type === "Login") {
       this.props.Login(this.state.username, this.state.password);
     } else {

@@ -50,7 +50,7 @@ class Meats extends React.Component {
 
   logged_in = () => {
     if (!this.props.user.username) {
-      return "You must be logged in to post a comment";
+      return "* You must be logged in to post a comment";
     }
   };
 
