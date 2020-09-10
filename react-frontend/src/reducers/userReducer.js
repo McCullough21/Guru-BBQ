@@ -10,7 +10,7 @@ const userReducer = (
     case "LOGOUT":
       return {
         ...state,
-        user: [],
+        user: {},
         comments: [...state.comments]
       };
 

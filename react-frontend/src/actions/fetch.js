@@ -55,10 +55,15 @@ export const userSignup = (username, password) => {
       body: JSON.stringify({ username: username, password: password })
     })
       .then(response => {
-        return response.json();
+        const json = response.json();
+        if (json.id) {
+          return json;
+        }
+        throw new Error("Duplicate");
       })
       .then(json => {
         dispatch({ type: "POPULATE_USER", info: json });
-      });
+      })
+      .catch(error => console.log(error));
   };
 };

@@ -8,7 +8,8 @@ class User extends React.Component {
     super();
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      error: ""
     };
   }
 
@@ -24,7 +25,13 @@ class User extends React.Component {
     if (this.props.type === "Login") {
       this.props.Login(this.state.username, this.state.password);
     } else {
-      this.props.Signup(this.state.username, this.state.password);
+      try {
+        this.props.Signup(this.state.username, this.state.password);
+      } catch {
+        this.setState({
+          error: "Username is taken"
+        });
+      }
     }
     this.setState({
       username: "",
@@ -35,6 +42,7 @@ class User extends React.Component {
   render() {
     return (
       <div>
+        <p>{this.state.error}</p>
         <form
           onSubmit={event => {
             this.handleSubmit(event);
