@@ -8,7 +8,7 @@ import User from "./containers/User";
 import { connect } from "react-redux";
 
 class App extends Component {
-  log = () => {
+  logout = () => {
     this.props.dispatch({ type: "LOGOUT" });
   };
 
@@ -25,7 +25,7 @@ class App extends Component {
                 <Link to="/Signup">
                   <button>Signup</button>
                 </Link>
-                <button onClick={this.log} style={{ float: "right" }}>
+                <button onClick={this.logout} style={{ float: "right" }}>
                   Logout
                 </button>
               </h3>

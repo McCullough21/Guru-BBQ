@@ -1,6 +1,5 @@
 import React from "react";
 import { ribs } from "../data.js";
-import { checkPropTypes } from "prop-types";
 import Comments from "./comments";
 
 export default function Ribs(props) {

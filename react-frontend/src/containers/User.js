@@ -64,7 +64,6 @@ class User extends React.Component {
     );
   }
 }
-// login signup, map state to props, if logged in redirect.  dispatch on promise form signup
 
 const mapDispatchToProps = dispatch => {
   return {
