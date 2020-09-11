@@ -35,15 +35,13 @@ export const userLogin = (username, password) => {
   return dispatch => {
     fetch(`http://localhost:3000/users/${username}/${password}`)
       .then(response => {
-        const json = response.json();
-        if (json.id) {
-          return json;
-        }
-        dispatch({ type: "ERROR", error: "Username or password incorrect" });
+        return response.json();
       })
-      .then(responseJSON => {
-        console.log(responseJSON);
-        dispatch({ type: "POPULATE_USER", info: responseJSON });
+      .then(json => {
+        dispatch({ type: "POPULATE_USER", info: json });
+      })
+      .catch(error => {
+        dispatch({ type: "ERROR", error: "Username or password incorrect" });
       });
   };
 };

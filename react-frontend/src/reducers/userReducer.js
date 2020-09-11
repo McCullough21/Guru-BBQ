@@ -20,7 +20,8 @@ const userReducer = (
       return {
         ...state,
         user: action.info,
-        comments: [...state.comments]
+        comments: [...state.comments],
+        error: ""
       };
 
     case "POPULATE_COMMENTS":
