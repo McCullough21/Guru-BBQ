@@ -35,7 +35,11 @@ export const userLogin = (username, password) => {
   return dispatch => {
     fetch(`http://localhost:3000/users/${username}/${password}`)
       .then(response => {
-        return response.json();
+        const json = response.json();
+        if (json.id) {
+          return json;
+        }
+        dispatch({ type: "ERROR", error: "Username or password incorrect" });
       })
       .then(responseJSON => {
         console.log(responseJSON);
@@ -55,15 +59,12 @@ export const userSignup = (username, password) => {
       body: JSON.stringify({ username: username, password: password })
     })
       .then(response => {
-        const json = response.json();
-        if (json.id) {
-          return json;
-        }
-        throw new Error("Duplicate");
+        return response.json();
       })
       .then(json => {
-        dispatch({ type: "POPULATE_USER", info: json });
-      })
-      .catch(error => console.log(error));
+        if (json.id) {
+          dispatch({ type: "POPULATE_USER", info: json });
+        } else dispatch({ type: "ERROR", error: "Username is already taken" });
+      });
   };
 };

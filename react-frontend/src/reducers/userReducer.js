@@ -1,7 +1,8 @@
 const userReducer = (
   state = {
     user: {},
-    comments: []
+    comments: [],
+    error: ""
   },
   action
 ) => {
@@ -15,6 +16,7 @@ const userReducer = (
       };
 
     case "POPULATE_USER":
+      console.log(action.info);
       return {
         ...state,
         user: action.info,
@@ -26,6 +28,13 @@ const userReducer = (
         ...state,
         user: { ...state.user },
         comments: action.comments
+      };
+    case "ERROR":
+      return {
+        ...state,
+        user: {},
+        comments: [...state.comments],
+        error: action.error
       };
 
     default:

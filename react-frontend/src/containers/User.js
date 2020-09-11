@@ -8,8 +8,7 @@ class User extends React.Component {
     super();
     this.state = {
       username: "",
-      password: "",
-      error: ""
+      password: ""
     };
   }
 
@@ -25,13 +24,7 @@ class User extends React.Component {
     if (this.props.type === "Login") {
       this.props.Login(this.state.username, this.state.password);
     } else {
-      try {
-        this.props.Signup(this.state.username, this.state.password);
-      } catch {
-        this.setState({
-          error: "Username is taken"
-        });
-      }
+      this.props.Signup(this.state.username, this.state.password);
     }
     this.setState({
       username: "",
@@ -39,10 +32,16 @@ class User extends React.Component {
     });
   };
 
+  displayError = () => {
+    if (this.props.error) {
+      return this.props.error;
+    }
+  };
+
   render() {
     return (
       <div>
-        <p>{this.state.error}</p>
+        <p style={{ color: "red" }}>{this.displayError()}</p>
         <form
           onSubmit={event => {
             this.handleSubmit(event);
@@ -80,4 +79,10 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(User);
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
