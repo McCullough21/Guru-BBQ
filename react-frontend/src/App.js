@@ -49,10 +49,10 @@ class App extends Component {
 
             <Switch>
               <Route path="/Login">
-                <User type="Login" />
+                <User actionType="Login" />
               </Route>
               <Route path="/Signup">
-                <User type="Sign-up" />
+                <User actionType="Sign-up" />
               </Route>
               <Route path="/Smokers">
                 <Smokers />

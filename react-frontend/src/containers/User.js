@@ -19,9 +19,9 @@ class User extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(this.props.type);
+    console.log(this.props.actionType);
     event.preventDefault();
-    if (this.props.type === "Login") {
+    if (this.props.actionType === "Login") {
       this.props.Login(this.state.username, this.state.password);
     } else {
       this.props.Signup(this.state.username, this.state.password);
@@ -52,6 +52,7 @@ class User extends React.Component {
             <input
               type="text"
               name="username"
+              value={this.state.username}
               onChange={event => this.handleChange(event)}
             />
           </label>
@@ -61,6 +62,7 @@ class User extends React.Component {
             <input
               type="text"
               name="password"
+              value={this.state.password}
               onChange={event => this.handleChange(event)}
             />
           </label>
