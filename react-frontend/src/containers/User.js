@@ -4,8 +4,8 @@ import { userLogin } from "../actions/fetch";
 import { connect } from "react-redux";
 
 class User extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: "",
       password: ""

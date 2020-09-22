@@ -8,7 +8,7 @@ export default function Ribs(props) {
   });
   let reverseList = coms.reverse();
   let comList = reverseList.map(comment => {
-    return <Comments comment={comment} />;
+    return <Comments comment={comment} key={comment.id} />;
   });
 
   let formDisplay = () => {
@@ -37,7 +37,7 @@ export default function Ribs(props) {
     }
   };
   return (
-    <div>
+    <>
       <h2 style={{ textAlign: "center" }}>RIBS</h2>
       <div style={{ display: "table", height: "200px", width: "100%" }}>
         <div
@@ -67,6 +67,6 @@ export default function Ribs(props) {
       {formDisplay()}
 
       {comList}
-    </div>
+    </>
   );
 }
