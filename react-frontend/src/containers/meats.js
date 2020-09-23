@@ -33,18 +33,21 @@ class Meats extends React.Component {
     console.log(this.props.user);
     event.preventDefault();
     if (this.props.user) {
-      await postComment(
-        this.props.user.username,
-        this.props.user.id,
-        this.state.comment,
-        event.target.name
-      );
-      this.setState(
-        {
-          comment: ""
-        },
-        this.props.fetchComments()
-      );
+      try {
+        await postComment(
+          this.props.user.username,
+          this.props.user.id,
+          this.state.comment,
+          event.target.name
+        );
+      } catch (err) {
+        console.log(err);
+      }
+      this.setState({
+        comment: ""
+      });
+      this.props.fetchComments();
+      console.log(this.state);
     }
   };
 

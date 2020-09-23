@@ -14,7 +14,6 @@ class Comments extends React.Component {
   };
 
   renderDate = () => {
-    console.log(this.props);
     let date = new Date(this.props.comment.created_at);
     let dateStamp = date.toLocaleDateString();
     let timeStamp = date.toLocaleTimeString();
