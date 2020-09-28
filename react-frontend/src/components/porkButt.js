@@ -11,7 +11,7 @@ export default function PorkButt(props) {
     return <Comments comment={comment} />;
   });
 
-  let formDisplay = () => {
+  const formDisplay = () => {
     if (!props.loggedIn()) {
       return (
         <form

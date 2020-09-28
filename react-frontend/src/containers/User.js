@@ -67,7 +67,7 @@ class User extends React.Component {
             />
           </label>
           <br></br>
-          <input type="submit" value={this.props.type} />
+          <input type="submit" value={this.props.actionType} />
         </form>
       </div>
     );
