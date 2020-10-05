@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { ribs } from "../data.js";
 import Comments from "./comments";
 
 export default function Ribs(props) {
-  let coms = props.comments.map(comment => {
-    return comment;
-  });
-  let reverseList = coms.reverse();
-  let comList = reverseList.map(comment => {
-    return <Comments comment={comment} key={comment.id} />;
-  });
+  let reverseList = [...props.comments].reverse();
+  const [comsList, setComsList] = useState(reverseList);
+
+  let sendComments = () => {
+    return comsList.map(comment => {
+      return <Comments comment={comment} key={comment.id} />;
+    });
+  };
+
+  const sortComments = () => {
+    let sortedComments = [...props.comments].sort((a, b) => {
+      if (a.user_username.toUpperCase() < b.user_username.toUpperCase()) {
+        return -1;
+      }
+      if (a.user_username.toUpperCase() > b.user_username.toUpperCase()) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    setComsList(sortedComments);
+  };
 
   let formDisplay = () => {
     if (!props.loggedIn()) {
@@ -64,9 +79,10 @@ export default function Ribs(props) {
       </div>
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
+      <button onClick={() => sortComments()}>Sort Comments</button>
       {formDisplay()}
 
-      {comList}
+      {sendComments()}
     </>
   );
 }

@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { porkButt } from "../data.js";
 import Comments from "./comments";
 
 export default function PorkButt(props) {
-  let coms = props.comments.map(comment => {
-    return comment;
-  });
-  let reverseList = coms.reverse();
-  let comList = reverseList.map(comment => {
-    return <Comments comment={comment} />;
-  });
+  let reverseList = [...props.comments].reverse();
+  const [listState, setListState] = useState(reverseList);
+  // let coms = props.comments.map(comment => {
+  //   return comment;
+  // });
+  let sendComments = () => {
+    return listState.map(comment => {
+      return <Comments comment={comment} />;
+    });
+  };
+
+  //   reverseList.map(comment => {
+  //   return <Comments comment={comment} />;
+  // });
+
+  const sortComments = () => {
+    let sortedComments = [...props.comments].sort((a, b) => {
+      if (a.user_username.toUpperCase() < b.user_username.toUpperCase()) {
+        return -1;
+      }
+      if (a.user_username.toUpperCase() > b.user_username.toUpperCase()) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    setListState(sortedComments);
+  };
 
   const formDisplay = () => {
     if (!props.loggedIn()) {
@@ -66,9 +87,10 @@ export default function PorkButt(props) {
       </div>
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
+      <button onClick={() => sortComments()}>Sort Comments</button>
       {formDisplay()}
 
-      {comList}
+      {sendComments()}
     </div>
   );
 }
