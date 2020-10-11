@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { porkButt } from "../data.js";
 import Comments from "./comments";
+import ReactPlayer from "react-player";
 
 export default function PorkButt(props) {
   let reverseList = [...props.comments].reverse();
   const [listState, setListState] = useState(reverseList);
-  // let coms = props.comments.map(comment => {
-  //   return comment;
-  // });
   let sendComments = () => {
     return listState.map(comment => {
       return <Comments comment={comment} />;
     });
   };
-
-  //   reverseList.map(comment => {
-  //   return <Comments comment={comment} />;
-  // });
 
   const sortComments = () => {
     let sortedComments = [...props.comments].sort((a, b) => {
@@ -62,7 +56,7 @@ export default function PorkButt(props) {
     <div>
       <h2 style={{ textAlign: "center" }}>PORK BUTT</h2>
 
-      <div style={{ display: "table", height: "200px", width: "100%" }}>
+      <div style={{ display: "table", width: "100%" }}>
         <div
           style={{
             display: "column",
@@ -85,6 +79,10 @@ export default function PorkButt(props) {
           <p>{porkButt.cooking}</p>
         </div>
       </div>
+      <ReactPlayer
+        style={{ float: "right" }}
+        url="https://www.youtube.com/watch?v=0DoKvxJh6aM"
+      />
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
       <button onClick={() => sortComments()}>Sort Comments</button>

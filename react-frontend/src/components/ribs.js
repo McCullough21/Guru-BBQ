@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ribs } from "../data.js";
 import Comments from "./comments";
+import ReactPlayer from "react-player";
 
 export default function Ribs(props) {
   let reverseList = [...props.comments].reverse();
@@ -77,6 +78,10 @@ export default function Ribs(props) {
           <p>{ribs.cooking}</p>
         </div>
       </div>
+      <ReactPlayer
+        style={{ float: "right" }}
+        url="https://www.youtube.com/watch?v=kRe0WymG1Jk"
+      />
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
       <button onClick={() => sortComments()}>Sort Comments</button>
