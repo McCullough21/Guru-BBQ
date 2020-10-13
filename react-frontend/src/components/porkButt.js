@@ -4,9 +4,10 @@ import Comments from "./comments";
 import ReactPlayer from "react-player";
 
 export default function PorkButt(props) {
-  let reverseList = [...props.comments].reverse();
+  const reverseList = [...props.comments].reverse();
   const [listState, setListState] = useState(reverseList);
-  let sendComments = () => {
+
+  const renderComments = () => {
     return listState.map(comment => {
       return <Comments comment={comment} />;
     });
@@ -88,7 +89,7 @@ export default function PorkButt(props) {
       <button onClick={() => sortComments()}>Sort Comments</button>
       {formDisplay()}
 
-      {sendComments()}
+      {renderComments()}
     </div>
   );
 }

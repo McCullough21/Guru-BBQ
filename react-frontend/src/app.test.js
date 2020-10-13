@@ -13,12 +13,20 @@ import thunk from "redux-thunk";
 Enzyme.configure({ adapter: new Adapter() });
 const store = createStore(userReducer, applyMiddleware(thunk));
 
-test("Logout button exists", () => {
-  const wrapper = mount(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+describe("Logout button exists", () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+  });
+  it("contains button for logout", () => {
+    expect(wrapper.find("button.logout")).toHaveLength(1);
+  });
 
-  expect(wrapper.containsMatchingElement(<button>Logout</button>)).toBeTruthy();
+  it("contains text of logout", () => {
+    expect(wrapper.find("button.logout").text()).toEqual("Logout");
+  });
 });

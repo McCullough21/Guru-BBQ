@@ -4,10 +4,10 @@ import Comments from "./comments";
 import ReactPlayer from "react-player";
 
 export default function Ribs(props) {
-  let reverseList = [...props.comments].reverse();
+  const reverseList = [...props.comments].reverse();
   const [comsList, setComsList] = useState(reverseList);
 
-  let sendComments = () => {
+  const renderComments = () => {
     return comsList.map(comment => {
       return <Comments comment={comment} key={comment.id} />;
     });
@@ -87,7 +87,7 @@ export default function Ribs(props) {
       <button onClick={() => sortComments()}>Sort Comments</button>
       {formDisplay()}
 
-      {sendComments()}
+      {renderComments()}
     </>
   );
 }
