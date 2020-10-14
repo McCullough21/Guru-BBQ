@@ -58,21 +58,13 @@ export default function PorkButt(props) {
       <h2 style={{ textAlign: "center" }}>PORK BUTT</h2>
 
       <div style={{ display: "table", width: "100%" }}>
+        <ReactPlayer
+          style={{ display: "block", margin: "auto" }}
+          url="https://www.youtube.com/watch?v=0DoKvxJh6aM"
+        />
         <div
           style={{
-            display: "column",
-            width: "45%",
-            float: "left",
-            padding: "15px"
-          }}
-        >
-          <img src={porkButt.img} alt="porkButt" style={{ maxWidth: "100%" }} />
-        </div>
-        <div
-          style={{
-            display: "column",
-            width: "45%",
-            float: "right",
+            width: "90%",
             padding: "15px"
           }}
         >
@@ -80,10 +72,7 @@ export default function PorkButt(props) {
           <p>{porkButt.cooking}</p>
         </div>
       </div>
-      <ReactPlayer
-        style={{ float: "right" }}
-        url="https://www.youtube.com/watch?v=0DoKvxJh6aM"
-      />
+
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
       <button onClick={() => sortComments()}>Sort Comments</button>

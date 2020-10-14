@@ -56,32 +56,25 @@ export default function Ribs(props) {
     <>
       <h2 style={{ textAlign: "center" }}>RIBS</h2>
       <div style={{ display: "table", height: "200px", width: "100%" }}>
-        <div
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=kRe0WymG1Jk"
           style={{
-            display: "column",
-            width: "40%",
-            float: "left",
-            padding: "15px"
+            display: "block",
+            margin: "auto"
           }}
-        >
-          <img src={ribs.img} alt="ribs" />
-        </div>
-        <div
-          style={{
-            display: "column",
-            width: "45%",
-            float: "right",
-            padding: "15px"
-          }}
-        >
-          <h3>Cooking Instructions:</h3>
-          <p>{ribs.cooking}</p>
-        </div>
+        />
       </div>
-      <ReactPlayer
-        style={{ float: "right" }}
-        url="https://www.youtube.com/watch?v=kRe0WymG1Jk"
-      />
+      <div
+        style={{
+          width: "90%",
+
+          padding: "15px"
+        }}
+      >
+        <h3>Cooking Instructions:</h3>
+        <p>{ribs.cooking}</p>
+      </div>
+
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
       <button onClick={() => sortComments()}>Sort Comments</button>
