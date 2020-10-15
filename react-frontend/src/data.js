@@ -25,39 +25,74 @@ let drumSmoker = {
     "https://images.homedepot-static.com/productImages/ec78831b-55b8-43f9-90c6-be62f7433eac/svn/pit-barrel-cooker-charcoal-smokers-212-77_1000.jpg"
 };
 
-let bbqRub = {
-  type: "Barbecue Rub",
-  ingredients: [
-    "1 cup Kosher Salt",
-    "1 cup Black Pepper",
-    "1/2 cup Paprika",
-    "1/2 cup Sugar",
-    "1/2 cup Granulated Onion",
-    "1/2 cup Granulated Garlic",
-    "1/4 cup Cayenne Pepper",
-    "1 tablespoon Cummin"
-  ]
-};
+let bbqRubs = [
+  {
+    type: "Barbecue Rub",
+    ingredients: [
+      "1 cup Kosher Salt",
+      "1 cup Black Pepper",
+      "1/2 cup Paprika",
+      "1/2 cup Sugar",
+      "1/2 cup Granulated Onion",
+      "1/2 cup Granulated Garlic",
+      "1/4 cup Cayenne Pepper",
+      "1 tablespoon Cummin"
+    ]
+  },
+  {
+    type: "Korean Rub",
+    ingredients: [
+      "1 tablespoon toasted sesame seeds",
+      "1 tablespoon brown sugar",
+      "1 teaspoon soy sauce powder",
+      "1 teaspoon onion powder",
+      "1/2 teaspoon granulated garlic",
+      "1/2 teaspoon coarse salt",
+      "1/4 teaspoon powdered ginger",
+      "1/4 teaspoon gochugaru Korean chili powder",
+      "1/4 teaspoon white pepper"
+    ]
+  }
+];
 
-let bbqSauce = {
-  type: "Barbecue Sauce",
-  ingredients: [
-    "1 cup Brown Sugar",
-    "1 cup Ketchup",
-    "1/4 cup Cider Vinegar",
-    "1/4 cup water",
-    "1 tablespoon Worcestershire Sauce",
-    "1/2 tablespoon Paprika",
-    "1/2 tablespoon Salt",
-    "1/2 tablespoon Black Pepper"
-  ]
-};
+let bbqSauces = [
+  {
+    type: "BBQ Sauce",
+    ingredients: [
+      "1 cup Brown Sugar",
+      "1 cup Ketchup",
+      "1/4 cup Cider Vinegar",
+      "1/4 cup water",
+      "1 tablespoon Worcestershire Sauce",
+      "1/2 tablespoon Paprika",
+      "1/2 tablespoon Salt",
+      "1/2 tablespoon Black Pepper"
+    ]
+  },
+  {
+    type: "Carolina Mustard BBQ Sauce",
+    ingredients: [
+      "3/4 cup yellow mustard",
+      "1/4 cup honey",
+      "1/4 cup brown sugar",
+      "1/3 cup apple cider vinegar",
+      "1 tablespoon ketchup",
+      "2 teaspoons Worcestershire sauce",
+      "1 teaspoon garlic powder",
+      "1 teaspoon onion powder",
+      "1/2 teaspoon salt",
+      "1/2 teaspoon ground black pepper",
+      "1/4 teaspoon chipotle chili powder",
+      "1/2 teaspoon hot sauce"
+    ]
+  }
+];
 
 module.exports = {
   porkButt,
   ribs,
   offSet,
   drumSmoker,
-  bbqRub,
-  bbqSauce
+  bbqRubs,
+  bbqSauces
 };

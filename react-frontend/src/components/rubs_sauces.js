@@ -1,10 +1,37 @@
 import React from "react";
 import { bbqRubs, bbqSauces } from "../data";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 // need add more recipes
 // need to set up links with the names of recipes
-// Links render a recipe compnent that will list the recipes under the link when clicked
+// Links render a recipe compnent that will list the recipes under the links when clicked
 
-function Recipes() {
+function RubsSauces() {
+  const populateRubLinks = () => {
+    return bbqRubs.map(rub => {
+      return (
+        <li key={rub.type}>
+          {" "}
+          <Link to="/Recipes">
+            <button>{rub.type}</button>
+          </Link>
+        </li>
+      );
+    });
+  };
+
+  const populateSauceLinks = () => {
+    return bbqSauces.map(sauce => {
+      return (
+        <li key={sauce.type}>
+          {" "}
+          <Link to="/Recipes">
+            <button>{sauce.type}</button>
+          </Link>
+        </li>
+      );
+    });
+  };
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>RUBS & SAUCES</h2>
@@ -19,12 +46,7 @@ function Recipes() {
         >
           <h1>Dry Rubs</h1>
           <br></br>
-          {/* <h3>Igredients:</h3>
-          <ul>
-            {bbqRub.ingredients.map(ing => {
-              return <li>{ing}</li>;
-            })}
-          </ul> */}
+          <ul className="rubs">{populateRubLinks()}</ul>
         </div>
         <div
           style={{
@@ -36,16 +58,11 @@ function Recipes() {
         >
           <h1>Sauces</h1>
           <br></br>
-          {/* <h3>Igredients:</h3>
-          <ul>
-            {bbqSauce.ingredients.map(ing => {
-              return <li>{ing}</li>;
-            })}
-          </ul> */}
+          <ul className="sauces">{populateSauceLinks()}</ul>
         </div>
       </div>
     </div>
   );
 }
 
-export default Recipes;
+export default RubsSauces;
