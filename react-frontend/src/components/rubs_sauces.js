@@ -1,5 +1,8 @@
 import React from "react";
-import { bbqRub, bbqSauce } from "../data";
+import { bbqRubs, bbqSauces } from "../data";
+// need add more recipes
+// need to set up links with the names of recipes
+// Links render a recipe compnent that will list the recipes under the link when clicked
 
 function Recipes() {
   return (
@@ -14,14 +17,14 @@ function Recipes() {
             padding: "15px"
           }}
         >
-          <h1>{bbqRub.type}</h1>
+          <h1>Dry Rubs</h1>
           <br></br>
-          <h3>Igredients:</h3>
+          {/* <h3>Igredients:</h3>
           <ul>
             {bbqRub.ingredients.map(ing => {
               return <li>{ing}</li>;
             })}
-          </ul>
+          </ul> */}
         </div>
         <div
           style={{
@@ -31,14 +34,14 @@ function Recipes() {
             padding: "15px"
           }}
         >
-          <h1>{bbqSauce.type}</h1>
+          <h1>Sauces</h1>
           <br></br>
-          <h3>Igredients:</h3>
+          {/* <h3>Igredients:</h3>
           <ul>
             {bbqSauce.ingredients.map(ing => {
               return <li>{ing}</li>;
             })}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>
