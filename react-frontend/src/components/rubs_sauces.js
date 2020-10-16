@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { bbqRubs, bbqSauces } from "../data";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // need add more recipes
 // need to set up links with the names of recipes
 // Links render a recipe compnent that will list the recipes under the links when clicked
 
 function RubsSauces() {
+  const [recipe, setRecipe] = useState({});
+
+  const displayRecipe = type => {
+    if (recipe.type === type) {
+      return recipe.ingredients.map(ing => {
+        return <li key={ing}>{ing}</li>;
+      });
+    }
+  };
+
   const populateRubLinks = () => {
     return bbqRubs.map(rub => {
       return (
-        <li key={rub.type}>
+        <li key={rub.type} style={{ padding: "15px" }}>
           {" "}
-          <Link to="/Recipes">
-            <button>{rub.type}</button>
-          </Link>
+          <button
+            style={{ width: "300px", height: "40px" }}
+            onClick={() => setRecipe(rub)}
+          >
+            {rub.type}
+          </button>
+          <ul>{displayRecipe(rub.type)}</ul>
+          {/* maybe something here t conditionally render the ingredient list when clicked */}
         </li>
       );
     });
@@ -23,11 +37,15 @@ function RubsSauces() {
   const populateSauceLinks = () => {
     return bbqSauces.map(sauce => {
       return (
-        <li key={sauce.type}>
+        <li key={sauce.type} style={{ padding: "15px" }}>
           {" "}
-          <Link to="/Recipes">
-            <button>{sauce.type}</button>
-          </Link>
+          <button
+            style={{ width: "300px", height: "40px" }}
+            onClick={() => setRecipe(sauce)}
+          >
+            {sauce.type}
+          </button>
+          <ul>{displayRecipe(sauce.type)}</ul>
         </li>
       );
     });

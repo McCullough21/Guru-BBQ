@@ -15,10 +15,6 @@ describe("Rubs and Sauces render links to recipes", () => {
       expect(wrapper.find("ul.rubs")).toHaveLength(1);
     });
 
-    it("Has Links", () => {
-      expect(rubList.find("Link")).toHaveLength(2);
-    });
-
     it("Displays the rub's type in link text", () => {
       expect(
         rubList
@@ -31,10 +27,6 @@ describe("Rubs and Sauces render links to recipes", () => {
 
   describe("Sauces column displays links", () => {
     let sauceList = wrapper.find("ul.sauces");
-
-    it("Has Links", () => {
-      expect(sauceList.find("Link")).toHaveLength(2);
-    });
 
     it("Displays the sauces's type in link text", () => {
       expect(
