@@ -63,28 +63,14 @@ class Meats extends React.Component {
         <h1 style={{ textAlign: "center" }}>MEATS</h1>
         <div>
           <Router>
-            <nav style={{ height: "40px", width: "100%", margin: "20px" }}>
+            <nav style={{ display: "flex", justifyContent: "center" }}>
               <Link to="/Ribs">
-                <button
-                  name="ribs"
-                  style={{
-                    float: "left",
-                    position: "relative",
-                    left: "30%"
-                  }}
-                >
+                <button name="ribs" style={{ marginRight: "50px" }}>
                   St. Louis-Style Ribs
                 </button>
               </Link>
               <Link to="/PorkButt">
-                <button
-                  name="porkButt"
-                  style={{
-                    float: "right",
-                    position: "relative",
-                    right: "40%"
-                  }}
-                >
+                <button name="porkButt" style={{ marginLeft: "50px" }}>
                   Pork Butt
                 </button>
               </Link>

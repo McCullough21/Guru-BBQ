@@ -34,6 +34,7 @@ class Comments extends React.Component {
             <button onClick={() => this.updateLikes()}>
               Likes: {this.state.likesAmount}
             </button>
+            {/* start comment reply chain here */}
           </li>
         </ul>
       </div>

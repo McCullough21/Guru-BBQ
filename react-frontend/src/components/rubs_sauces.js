@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { bbqRubs, bbqSauces } from "../data";
 
-// need add more recipes
-// need to set up links with the names of recipes
-// Links render a recipe compnent that will list the recipes under the links when clicked
-
 function RubsSauces() {
   const [recipe, setRecipe] = useState({});
 
@@ -28,7 +24,6 @@ function RubsSauces() {
             {rub.type}
           </button>
           <ul>{displayRecipe(rub.type)}</ul>
-          {/* maybe something here t conditionally render the ingredient list when clicked */}
         </li>
       );
     });
