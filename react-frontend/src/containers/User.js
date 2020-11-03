@@ -2,7 +2,7 @@ import React from "react";
 import { userSignup } from "../actions/fetch";
 import { userLogin } from "../actions/fetch";
 import { connect } from "react-redux";
-// ADDING NOTES TO TROUBLESHOOT GITHUB ISSUE
+
 class User extends React.Component {
   constructor(props) {
     super(props);

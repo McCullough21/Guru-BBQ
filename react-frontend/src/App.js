@@ -7,6 +7,9 @@ import Meats from "./containers/meats";
 import User from "./containers/User";
 import { connect } from "react-redux";
 
+// Going to incorporate GOOGLE API for users to enter in their zipcode and
+// receive first 3 bbq restaurants near them
+
 class App extends Component {
   logout = () => {
     this.props.dispatch({ type: "LOGOUT" });
