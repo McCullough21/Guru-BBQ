@@ -6,9 +6,18 @@ import Recipes from "./components/rubs_sauces";
 import Meats from "./containers/meats";
 import User from "./containers/User";
 import { connect } from "react-redux";
-
+// AIzaSyBNxh59of4YTZtcCyz7O1qD99HfozZ5BNs google api key
 // Going to incorporate GOOGLE API for users to enter in their zipcode and
 // receive first 3 bbq restaurants near them
+
+// const y = () => {
+//   fetch(
+//     "https://www.googleapis.com/customsearch/v1?key=AIzaSyBNxh59of4YTZtcCyz7O1qD99HfozZ5BNs&cx=a853ea462f3b9dbe2:omuauf_lfve&q=BBQ"
+//   )
+//     .then(resp => resp.json())
+//     .then(json => console.log(json))
+//     .catch(error => console.log(error));
+// };
 
 class App extends Component {
   logout = () => {
