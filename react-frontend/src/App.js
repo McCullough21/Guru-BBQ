@@ -6,7 +6,6 @@ import Recipes from "./components/rubs_sauces";
 import Meats from "./containers/meats";
 import User from "./containers/User";
 import { connect } from "react-redux";
-import GoogleMaps from "./components/googleMaps";
 
 class App extends Component {
   logout = () => {
@@ -38,7 +37,6 @@ class App extends Component {
                 {this.props.user.username}
               </h3>
               <h1 className="App-title">Guru BBQ</h1>
-              <GoogleMaps />
             </div>
             <br></br>
             <h3 className="buttons">
