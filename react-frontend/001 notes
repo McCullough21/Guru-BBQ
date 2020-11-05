@@ -1,0 +1,8 @@
+-change Submit props in meats and corresponding meat to postNewComment
+
+-new action to update likes amount on a comment 
+-rework components for comment display showing likes amount 
+-rework comment component with new pathway for updating 
+likes thorugh state and like button
+-make sure backend accepts likes and persists
+
