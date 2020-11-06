@@ -5,4 +5,4 @@
 -rework comment component with new pathway for updating 
 likes thorugh state and like button
 -make sure backend accepts likes and persists
-
+-rails controller for comment will need an edit action

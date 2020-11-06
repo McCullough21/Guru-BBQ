@@ -16,7 +16,7 @@ const userReducer = (
       };
 
     case "POPULATE_USER":
-      console.log(action.info);
+      console.log(action);
       return {
         ...state,
         user: action.info,
@@ -25,6 +25,7 @@ const userReducer = (
       };
 
     case "POPULATE_COMMENTS":
+      console.log(action);
       return {
         ...state,
         user: { ...state.user },

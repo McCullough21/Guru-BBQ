@@ -30,7 +30,6 @@ class Meats extends React.Component {
   };
 
   handleSubmit = async event => {
-    console.log(this.props.user);
     event.preventDefault();
     if (this.props.user) {
       try {
@@ -47,7 +46,6 @@ class Meats extends React.Component {
         comment: ""
       });
       this.props.fetchComments();
-      console.log(this.state);
     }
   };
 
