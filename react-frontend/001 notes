@@ -6,3 +6,6 @@
 likes thorugh state and like button
 -make sure backend accepts likes and persists
 -rails controller for comment will need an edit action
+
+-aciton put to comment/:id 
+-track comment ID to be able to persist change in likes amount
