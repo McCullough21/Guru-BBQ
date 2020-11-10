@@ -4,7 +4,7 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likesAmount: 0
+      likesAmount: props.comment.likes
     };
   }
   updateLikes = () => {

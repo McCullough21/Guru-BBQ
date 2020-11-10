@@ -22,6 +22,7 @@ class Meats extends React.Component {
     );
     return meatComments;
   };
+  // post comment, then fetch, not changing state to re render
 
   handleChange = event => {
     this.setState({
