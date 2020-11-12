@@ -1,5 +1,9 @@
 -change Submit props in meats and corresponding meat to postNewComment
 
+-rework backend ORM create Likes resource, and belongs to relationship with 
+    Comment and User
+-
+
 -new action to update likes amount on a comment 
 -rework components for comment display showing likes amount 
 -rework comment component with new pathway for updating 
@@ -7,5 +11,3 @@ likes thorugh state and like button
 -make sure backend accepts likes and persists
 -rails controller for comment will need an edit action
 
--aciton put to comment/:id 
--track comment ID to be able to persist change in likes amount
