@@ -1,11 +1,11 @@
+-LIKES action, creates and persists new like when like button selected.
+-Track comment and USer to create new like Post Fetch
+
 -change Submit props in meats and corresponding meat to postNewComment
 
 -rework backend ORM create Likes resource, and belongs to relationship with 
     -Comment and User
     -Comment reply chain, new resource for Comment reply? 
-
--LIKES action, creates and persists new like when like button selected.
--Track comment and USer to create new like Post Fetch
 
 
 -new action to update likes amount on a comment 
@@ -13,5 +13,6 @@
 -rework comment component with new pathway for updating 
 likes thorugh state and like button
 -make sure backend accepts likes and persists
--rails controller for comment will need an edit action
 
+
+-change Submit props in meats and corresponding meat to postNewComment

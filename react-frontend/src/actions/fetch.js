@@ -29,6 +29,20 @@ export const postComment = (username, id, content, meat) => {
   });
 };
 
+export const newLike = (userId, commentId) => {
+  fetch("http://localhost:3000/likes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      userId: userId,
+      commentId: commentId
+    })
+  });
+};
+
 export const userLogin = (username, password) => {
   console.log(username);
   console.log(password);
