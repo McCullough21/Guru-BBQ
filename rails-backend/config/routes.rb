@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reply_chains
   resources :likes
   resources :comments
   # resources :users

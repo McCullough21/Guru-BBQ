@@ -1,7 +1,9 @@
 -change Submit props in meats and corresponding meat to postNewComment
 
 -rework backend ORM create Likes resource, and belongs to relationship with 
-    Comment and User
+    -Comment and User
+    -Comment reply chain, new resource for Comment reply? 
+        
 -
 
 -new action to update likes amount on a comment 

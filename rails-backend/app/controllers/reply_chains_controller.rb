@@ -1,0 +1,2 @@
+class ReplyChainsController < ApplicationController
+end
