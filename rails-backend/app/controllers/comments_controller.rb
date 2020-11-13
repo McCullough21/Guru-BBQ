@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
     def create
         
-        @comment = Comment.create(content: params[:content], user_id: params[:id], user_username: params[:username], meatType: params[:meatType], likes: params[:likes])
+        @comment = Comment.create(content: params[:content], user_id: params[:id], user_username: params[:username], meatType: params[:meatType])
 
     end
 

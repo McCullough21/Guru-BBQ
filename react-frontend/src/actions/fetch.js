@@ -24,8 +24,7 @@ export const postComment = (username, id, content, meat) => {
       username: username,
       id: id,
       content: content,
-      meatType: meat,
-      likes: 0
+      meatType: meat
     })
   });
 };
