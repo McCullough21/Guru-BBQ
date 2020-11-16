@@ -8,4 +8,6 @@ class LikesController < ApplicationController
     def create
         @like = Like.create(user_id: params[:userId], comment_id: params[:commentId])
     end
+
+    
 end

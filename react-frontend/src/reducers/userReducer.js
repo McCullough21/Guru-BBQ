@@ -6,7 +6,6 @@ const userReducer = (
   },
   action
 ) => {
-  console.log(action);
   switch (action.type) {
     case "LOGOUT":
       return {
@@ -16,7 +15,6 @@ const userReducer = (
       };
 
     case "POPULATE_USER":
-      console.log(action);
       return {
         ...state,
         user: action.info,

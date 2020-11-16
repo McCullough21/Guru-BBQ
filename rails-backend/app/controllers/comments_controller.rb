@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
     def index
         
         @comments = Comment.all
-        render json: @comments.to_json
+        render json: @comments.to_json(:include => {comment.likes})
+
+        
+
+#         @scores.to_json(:include => {:course => {:only => [:name, :rating, :slope]}, 
+#   :user => {:only => [:username, :id]}}) 
     end
 
     def create
