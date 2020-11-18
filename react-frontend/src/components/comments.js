@@ -4,14 +4,14 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likesAmount: props.comment.likes
+      commentId: props.comment.id
     };
   }
-  updateLikes = () => {
-    this.setState(prevState => {
-      return { likesAmount: (prevState.likesAmount += 1) };
-    });
-  };
+  // updateLikes = () => {
+  //   this.setState(prevState => {
+  //     return { likesAmount: (prevState.likesAmount += 1) };
+  //   });
+  // };
 
   renderDate = () => {
     let date = new Date(this.props.comment.created_at);
@@ -42,4 +42,11 @@ class Comments extends React.Component {
   }
 }
 
-export default Comments;
+const mapStateToProps = state => {
+  return {
+    likes: state.likes,
+    user: state.user
+  };
+};
+
+export default connect(mapStateToProps)(Comments);
