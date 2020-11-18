@@ -35,7 +35,8 @@ export const fetchLikes = () => {
     .then(likeData => {
       console.log(likeData);
       dispatch({ type: "POPULATE_LIKES", likes: likeData });
-    });
+    })
+    .catch(error => console.log(error));
 };
 
 export const newLike = (userId, commentId) => {
