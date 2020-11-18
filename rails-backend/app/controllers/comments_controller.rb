@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     def index
         
         @comments = Comment.all
-        render json: @comments.to_json(:include => {comment.likes})
+        render json: @comments.to_json
 
         
 

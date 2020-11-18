@@ -29,6 +29,15 @@ export const postComment = (username, id, content, meat) => {
   });
 };
 
+export const fetchLikes = () => {
+  fetch("http://localhost3000/likes")
+    .then(response => response.json())
+    .then(likeData => {
+      console.log(likeData);
+      dispatch({ type: "POPULATE_LIKES", likes: likeData });
+    });
+};
+
 export const newLike = (userId, commentId) => {
   fetch("http://localhost:3000/likes", {
     method: "POST",
