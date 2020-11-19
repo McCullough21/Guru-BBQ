@@ -7,6 +7,13 @@ class Comments extends React.Component {
       commentId: props.comment.id
     };
   }
+  // need to map likes to corresponding comment.
+  // Populate likes button with like amount.
+  // track userId to ensure user can only like a comment once
+  // make like button blue if already liked
+  // If user new like, persist new like
+  // if user UnLike delete like record in DB
+
   // updateLikes = () => {
   //   this.setState(prevState => {
   //     return { likesAmount: (prevState.likesAmount += 1) };
