@@ -34,7 +34,7 @@ class App extends Component {
                 </button>
               </h3>
               <h3 style={{ textAlign: "right", marginRight: "10%" }}>
-                {this.props.user.username}
+                User: {this.props.user.username}
               </h3>
               <h1 className="App-title">Guru BBQ</h1>
             </div>

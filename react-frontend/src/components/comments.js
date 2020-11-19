@@ -5,9 +5,10 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      commentId: props.comment.id
+      likesAmount: props.likes.length
     };
   }
+
   // need to map likes to corresponding comment.
   // Populate likes button with like amount.
   // track userId to ensure user can only like a comment once

@@ -31,7 +31,7 @@ export const postComment = async (username, id, content, meat) => {
 
 export const fetchLikes = () => {
   return dispatch => {
-    fetch("http://localhost3000/likes")
+    fetch("http://localhost:3000/likes")
       .then(response => {
         return response.json();
       })

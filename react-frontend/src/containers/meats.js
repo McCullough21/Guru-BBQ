@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchComments, postComment } from "../actions/fetch";
+import { fetchComments, postComment, fetchLikes } from "../actions/fetch";
 import Ribs from "../components/ribs";
 import PorkButt from "../components/porkButt";
 
@@ -14,6 +14,7 @@ class Meats extends React.Component {
   }
   componentDidMount() {
     this.props.fetchComments();
+    this.props.fetchLikes();
   }
 
   popComments = name => {
@@ -108,13 +109,15 @@ class Meats extends React.Component {
 const mapStateToProps = state => {
   return {
     comments: state.comments,
-    user: state.user
+    user: state.user,
+    likes: state.likes
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchComments: () => dispatch(fetchComments())
+    fetchComments: () => dispatch(fetchComments()),
+    fetchLikes: () => dispatch(fetchLikes())
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Meats);
