@@ -20,7 +20,7 @@ class Meats extends React.Component {
     const meatComments = this.props.comments.filter(
       comment => comment.meatType === name
     );
-    return meatComments;
+    return meatComments.reverse();
   };
   // post comment, then fetch, not changing state to re render
 

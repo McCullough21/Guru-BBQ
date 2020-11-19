@@ -1,30 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { porkButt } from "../data.js";
 import Comments from "./comments";
 import ReactPlayer from "react-player";
 
 export default function PorkButt(props) {
-  const reverseList = [...props.comments].reverse();
-  const [listState, setListState] = useState(reverseList);
-
   const renderComments = () => {
-    return listState.map(comment => {
+    return props.comments.map(comment => {
       return <Comments comment={comment} />;
     });
-  };
-
-  const sortComments = () => {
-    let sortedComments = [...props.comments].sort((a, b) => {
-      if (a.user_username.toUpperCase() < b.user_username.toUpperCase()) {
-        return -1;
-      }
-      if (a.user_username.toUpperCase() > b.user_username.toUpperCase()) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-    setListState(sortedComments);
   };
 
   const formDisplay = () => {
@@ -75,7 +58,7 @@ export default function PorkButt(props) {
 
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
-      <button onClick={() => sortComments()}>Sort Comments</button>
+      {/* <button onClick={() => sortComments()}>Sort Comments</button> */}
       {formDisplay()}
 
       {renderComments()}
