@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import Likes from "./likes";
 
 class Comments extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      likesAmount: props.likes.length
-    };
+    console.log(props);
+    this.state = {};
   }
 
   // need to map likes to corresponding comment.
@@ -21,6 +21,14 @@ class Comments extends React.Component {
   //     return { likesAmount: (prevState.likesAmount += 1) };
   //   });
   // };
+
+  renderLikes = () => {
+    let commentLikes = this.props.likes.filter(
+      like => like.comment_id === this.props.comment.id
+    );
+
+    return <Likes likes={commentLikes} />;
+  };
 
   renderDate = () => {
     let date = new Date(this.props.comment.created_at);
@@ -40,9 +48,7 @@ class Comments extends React.Component {
             <h3>{this.props.comment.user_username}</h3>
             {this.renderDate()}
             <p>{this.props.comment.content}</p>
-            <button onClick={() => this.updateLikes()}>
-              Likes: {this.state.likesAmount}
-            </button>
+            {this.renderLikes()}
             {/* start comment reply chain here */}
           </li>
         </ul>
