@@ -9,6 +9,10 @@ class Likes extends React.Component {
     };
   }
 
+  // need to have ability to unlike
+  // handleclick function
+  // must be logged in to Like comment
+
   hasUserLiked = () => {
     let hasLiked = this.state.likes.filter(
       like => like.user_id === this.props.user.id
