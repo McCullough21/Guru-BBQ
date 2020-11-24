@@ -8,10 +8,12 @@ class Likes extends React.Component {
       likes: props.likes
     };
   }
-
-  // need to have ability to unlike
-  // handleclick function
   // must be logged in to Like comment
+  // ON DELETE LIKE dispatch action with likeId to delete from store
+  //      With DELETE fetch to API.
+  // dispatch for new like and create to api
+
+  handleClick = () => {};
 
   hasUserLiked = () => {
     let hasLiked = this.state.likes.filter(
