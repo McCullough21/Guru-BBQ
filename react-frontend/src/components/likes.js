@@ -13,26 +13,43 @@ class Likes extends React.Component {
   //      With DELETE fetch to API.
   // dispatch for new like and create to api
 
-  handleClick = () => {};
+  handleClick = event => {
+    console.log(event.target);
+    event.target.style.color = "blue";
+    //   if user hasliked? unlike / change button color back
+    // if hasn't Like/change button color to blue
+    //   ???Event.taget style ????
+  };
 
-  hasUserLiked = () => {
+  userHasLiked = () => {
     let hasLiked = this.state.likes.filter(
       like => like.user_id === this.props.user.id
     );
-    console.log(hasLiked);
     if (hasLiked.length !== 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  renderLikeButton = () => {
+    if (this.userHasLiked()) {
       return (
-        <button style={{ color: "blue" }}>
+        <button onClick={this.handleClick} style={{ color: "blue" }}>
           Likes: {this.state.likes.length}
         </button>
       );
     } else {
-      return <button>Likes: {this.state.likes.length}</button>;
+      return (
+        <button onClick={this.handleClick}>
+          Likes: {this.state.likes.length}
+        </button>
+      );
     }
   };
 
   render() {
-    return <>{this.hasUserLiked()}</>;
+    return <>{this.renderLikeButton()}</>;
   }
 }
 
