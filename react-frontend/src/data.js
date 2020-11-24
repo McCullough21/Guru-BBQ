@@ -14,7 +14,7 @@ let offSet = {
   description:
     "Also know as a stick burner.  Offset smokers have a main smoking chamber with the firebox set off to the side.",
   img:
-    "https://www.charbroil.com/media/catalog/product/optimized/f/9/f9a5fd49e4ae3822dd44d1db4fee7f7c/x18202079_40in-offset-smoker_002_1.png.pagespeed.gp+jp+jw+pj+ws+js+rj+rw+ri+rm+cp+md+ia=100+im=-1.ic.oAzcVFgK5p.webp"
+    "http://mobileimages.lowes.com/product/converted/099143/099143020310.jpg?size=pdhi"
 };
 
 let drumSmoker = {

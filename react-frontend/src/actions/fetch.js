@@ -43,8 +43,9 @@ export const fetchLikes = () => {
   };
 };
 
-export const newLike = (userId, commentId) => {
-  fetch("http://localhost:3000/likes", {
+// return dispatch just like GET fetch, to repopulate store
+export const newLike = async (userId, commentId) => {
+  await fetch("http://localhost:3000/likes", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -55,6 +56,7 @@ export const newLike = (userId, commentId) => {
       commentId: commentId
     })
   });
+  fetchLikes();
 };
 
 export const userLogin = (username, password) => {

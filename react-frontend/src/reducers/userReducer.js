@@ -43,6 +43,7 @@ const userReducer = (
         likes: action.likes,
         error: ""
       };
+
     case "ERROR":
       return {
         ...state,
