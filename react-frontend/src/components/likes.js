@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { newLike } from "../actions/fetch";
 
 class Likes extends React.Component {
   constructor(props) {
@@ -12,6 +13,12 @@ class Likes extends React.Component {
   // ON DELETE LIKE dispatch action with likeId to delete from store
   //      With DELETE fetch to API.
   // dispatch for new like and create to api
+
+  notLoggedIn = () => {
+    if (!this.props.user.username) {
+      return true;
+    }
+  };
 
   handleClick = event => {
     console.log(event.target);
@@ -32,6 +39,14 @@ class Likes extends React.Component {
     }
   };
 
+  abilityToLike = () => {
+    if (this.notLoggedIn()) {
+      return <p>"*Login required*"</p>;
+    } else {
+      return null;
+    }
+  };
+
   renderLikeButton = () => {
     if (this.userHasLiked()) {
       return (
@@ -49,7 +64,12 @@ class Likes extends React.Component {
   };
 
   render() {
-    return <>{this.renderLikeButton()}</>;
+    return (
+      <>
+        {this.renderLikeButton()}
+        {this.abilityToLike()}
+      </>
+    );
   }
 }
 
