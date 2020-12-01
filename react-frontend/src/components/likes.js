@@ -7,8 +7,8 @@ class Likes extends React.Component {
     super(props);
     this.state = {
       likes: props.likes,
-      notLoggedIn: !props.user.username
-      // userHasLiked:
+      loggedIn: !!props.user.username,
+      triedToLike: false
     };
   }
   // must be logged in to Like comment
@@ -17,8 +17,14 @@ class Likes extends React.Component {
   // dispatch for new like and create to api
 
   handleClick = event => {
-    // set state to liked
-    // trigger action that contains api calls
+    if (this.state.loggedIn) {
+      // if logged in, set state to liked and trigger action that contains api calls
+    } else {
+      this.setState({
+        triedToLike: true
+      });
+    }
+
     // if (this.notLoggedIn()) {
     //   let notAbleToLike = this.abilityToLike();
     //   return (notAbleToLike.style.color = "red");
@@ -53,7 +59,7 @@ class Likes extends React.Component {
             Likes: {this.state.likes.length}
           </button>
         )}
-        {this.state.notLoggedIn ? (
+        {this.state.triedToLike ? (
           <p>*Login required to like a comment*</p>
         ) : null}
       </>
