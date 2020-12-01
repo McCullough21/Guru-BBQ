@@ -39,7 +39,6 @@ export default function PorkButt(props) {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>PORK BUTT</h2>
-
       <div style={{ display: "table", width: "100%" }}>
         <ReactPlayer
           style={{ display: "block", margin: "auto" }}
