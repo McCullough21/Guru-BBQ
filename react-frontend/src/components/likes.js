@@ -16,14 +16,28 @@ class Likes extends React.Component {
   // ON DELETE LIKE dispatch action with likeId to delete from store
   //      With DELETE fetch to API.
   // dispatch for new like and create to api
+  toggleLiked = () => {
+    console.log(this.state.hasLiked);
+    this.setState({
+      triedToLike: false,
+      hasLiked: !this.state.hasLiked
+    });
+    // not repopulating with async api call.
+    if (this.state.hasLiked) {
+      console.log(this.state.hasLiked);
+      const like = this.state.likes.find(
+        like => like.user_id === this.props.user.id
+      );
+      deleteLike(like.id);
+    } else {
+      newLike(this.props.user.id, this.props.commentId);
+    }
+  };
 
   handleClick = event => {
     if (this.state.loggedIn) {
-      this.setState({
-        triedToLike: false,
-        hasLiked: !this.state.hasLiked
-      });
-      // function call api, based on hasLiked new like or delete like
+      this.toggleLiked();
+      // function call, api based on hasLiked new like or delete like
     } else {
       this.setState({
         triedToLike: true

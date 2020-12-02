@@ -27,7 +27,7 @@ class Comments extends React.Component {
       like => like.comment_id === this.props.comment.id
     );
 
-    return <Likes likes={commentLikes} />;
+    return <Likes likes={commentLikes} commentId={this.props.comment.id} />;
   };
 
   renderDate = () => {

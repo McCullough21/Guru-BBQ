@@ -44,7 +44,8 @@ export const fetchLikes = () => {
 };
 
 export const deleteLike = async likeId => {
-  fetch(`http://localhost:3000/like/${likeId}`, {
+  console.log(likeId);
+  await fetch(`http://localhost:3000/likes/${likeId}`, {
     method: "DELETE"
   });
 };
@@ -59,8 +60,9 @@ export const newLike = async (userId, commentId) => {
       userId: userId,
       commentId: commentId
     })
-  });
-  fetchLikes();
+  })
+    .then(resp => resp.json())
+    .then(json => console.log(json));
 };
 
 export const userLogin = (username, password) => {
