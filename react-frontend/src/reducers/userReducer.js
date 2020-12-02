@@ -44,6 +44,25 @@ const userReducer = (
         error: ""
       };
 
+    case "NEW_LIKE":
+      return {
+        ...state,
+        user: { ...state.user },
+        comments: [...state.comments],
+        likes: [...state.likes, action.like],
+        error: ""
+      };
+
+    case "DELETE_LIKE":
+      let updatedLikes = state.likes.filter(like => like.id !== action.id);
+      return {
+        ...state,
+        user: { ...state.user },
+        comments: [...state.comments],
+        likes: updatedLikes,
+        error: ""
+      };
+
     case "ERROR":
       return {
         ...state,
