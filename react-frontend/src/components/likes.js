@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { newLike } from "../actions/fetch";
+import { newLike, deleteLike } from "../actions/fetch";
 
 class Likes extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class Likes extends React.Component {
         triedToLike: false,
         hasLiked: !this.state.hasLiked
       });
+      // function call api, based on hasLiked new like or delete like
     } else {
       this.setState({
         triedToLike: true

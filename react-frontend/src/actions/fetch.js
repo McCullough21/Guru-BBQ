@@ -43,7 +43,11 @@ export const fetchLikes = () => {
   };
 };
 
-// return dispatch just like GET fetch, to repopulate store
+export const deleteLike = async likeId => {
+  fetch(`http://localhost:3000/like/${likeId}`, {
+    method: "DELETE"
+  });
+};
 export const newLike = async (userId, commentId) => {
   await fetch("http://localhost:3000/likes", {
     method: "POST",
