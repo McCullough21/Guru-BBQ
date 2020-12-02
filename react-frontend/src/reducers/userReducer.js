@@ -45,6 +45,7 @@ const userReducer = (
       };
 
     case "NEW_LIKE":
+      console.log(action);
       return {
         ...state,
         user: { ...state.user },
@@ -54,6 +55,7 @@ const userReducer = (
       };
 
     case "DELETE_LIKE":
+      console.log(action);
       let updatedLikes = state.likes.filter(like => like.id !== action.id);
       return {
         ...state,

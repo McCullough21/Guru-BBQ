@@ -43,26 +43,31 @@ export const fetchLikes = () => {
   };
 };
 
-export const deleteLike = async likeId => {
+export const deleteLike = likeId => {
   console.log(likeId);
-  await fetch(`http://localhost:3000/likes/${likeId}`, {
-    method: "DELETE"
-  });
+  return dispatch => {
+    fetch(`http://localhost:3000/likes/${likeId}`, {
+      method: "DELETE"
+    });
+    dispatch({ type: "DELETE_LIKE", id: likeId });
+  };
 };
-export const newLike = async (userId, commentId) => {
-  await fetch("http://localhost:3000/likes", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({
-      userId: userId,
-      commentId: commentId
+export const newLike = (userId, commentId) => {
+  return dispatch => {
+    fetch("http://localhost:3000/likes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        userId: userId,
+        commentId: commentId
+      })
     })
-  })
-    .then(resp => resp.json())
-    .then(json => console.log(json));
+      .then(resp => resp.json())
+      .then(json => dispatch({ type: "NEW_LIKE", like: json }));
+  };
 };
 
 export const userLogin = (username, password) => {

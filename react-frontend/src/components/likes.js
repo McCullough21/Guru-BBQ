@@ -28,9 +28,9 @@ class Likes extends React.Component {
       const like = this.state.likes.find(
         like => like.user_id === this.props.user.id
       );
-      deleteLike(like.id);
+      this.props.deleteLike(like.id);
     } else {
-      newLike(this.props.user.id, this.props.commentId);
+      this.props.newLike(this.props.user.id, this.props.commentId);
     }
   };
 
@@ -84,4 +84,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Likes);
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteLike: id => dispatch(deleteLike(id)),
+    newLike: (userId, commentId) => dispatch(newLike(userId, commentId))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Likes);

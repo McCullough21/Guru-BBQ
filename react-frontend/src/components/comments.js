@@ -6,7 +6,9 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     console.log(props);
-    this.state = {};
+    this.state = {
+      likes: this.props.likes
+    };
   }
 
   // need to map likes to corresponding comment.
@@ -23,7 +25,7 @@ class Comments extends React.Component {
   // };
 
   renderLikes = () => {
-    let commentLikes = this.props.likes.filter(
+    let commentLikes = this.state.likes.filter(
       like => like.comment_id === this.props.comment.id
     );
 

@@ -6,8 +6,12 @@ import userReducer from "./reducers/userReducer";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(userReducer, applyMiddleware(thunk));
+const store = createStore(
+  userReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <Provider store={store}>
