@@ -7,28 +7,17 @@ class Comments extends React.Component {
     super(props);
     console.log(props);
     this.state = {
-      likes: this.props.likes
+      likes: []
     };
   }
 
-  // need to map likes to corresponding comment.
-  // Populate likes button with like amount.
-  // track userId to ensure user can only like a comment once
-  // make like button blue if already liked
-  // If user new like, persist new like
-  // if user UnLike delete like record in DB
-
-  // updateLikes = () => {
-  //   this.setState(prevState => {
-  //     return { likesAmount: (prevState.likesAmount += 1) };
-  //   });
-  // };
-
   renderLikes = () => {
-    let commentLikes = this.state.likes.filter(
+    let commentLikes = this.props.likes.filter(
       like => like.comment_id === this.props.comment.id
     );
-
+    // this.setState({
+    //   likes: commentLikes
+    // });
     return <Likes likes={commentLikes} commentId={this.props.comment.id} />;
   };
 
@@ -42,6 +31,7 @@ class Comments extends React.Component {
       </p>
     );
   };
+
   render() {
     return (
       <div>
@@ -59,7 +49,9 @@ class Comments extends React.Component {
   }
 }
 
+// MAPstatetoprops changing when store changes, wont rerender likes
 const mapStateToProps = state => {
+  console.log(state.likes);
   return {
     likes: state.likes,
     user: state.user
