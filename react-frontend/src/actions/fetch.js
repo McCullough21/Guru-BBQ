@@ -53,8 +53,8 @@ export const deleteLike = likeId => {
   };
 };
 export const newLike = (userId, commentId) => {
-  return dispatch => {
-    fetch("http://localhost:3000/likes", {
+  return async dispatch => {
+    await fetch("http://localhost:3000/likes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
