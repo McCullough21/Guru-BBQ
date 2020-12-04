@@ -6,7 +6,7 @@ class Likes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likes: props.likes,
+      likes: [],
       loggedIn: !!props.user.username,
       triedToLike: false,
       hasLiked: false
@@ -16,22 +16,24 @@ class Likes extends React.Component {
   // ON DELETE LIKE dispatch action with likeId to delete from store
   //      With DELETE fetch to API.
   // dispatch for new like and create to api
-  toggleLiked = () => {
-    console.log(this.state.hasLiked);
+
+  toggleLiked = async () => {
     this.setState({
       triedToLike: false,
       hasLiked: !this.state.hasLiked
     });
     // not repopulating with async api call.
     if (this.state.hasLiked) {
-      console.log(this.state.hasLiked);
-      const like = this.state.likes.find(
+      const like = this.props.likes.find(
         like => like.user_id === this.props.user.id
       );
-      this.props.deleteLike(like.id);
+      await this.props.deleteLike(like.id);
     } else {
-      this.props.newLike(this.props.user.id, this.props.commentId);
+      await this.props.newLike(this.props.user.id, this.props.commentId);
     }
+    this.setState({
+      likes: this.props.likes
+    });
   };
 
   handleClick = event => {
@@ -46,7 +48,10 @@ class Likes extends React.Component {
   };
 
   componentDidMount() {
-    let hasLiked = this.state.likes.filter(
+    this.setState({
+      likes: this.props.likes
+    });
+    let hasLiked = this.props.likes.filter(
       like => like.user_id === this.props.user.id
     );
     if (hasLiked.length !== 0) {

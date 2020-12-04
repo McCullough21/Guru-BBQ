@@ -6,20 +6,18 @@ class Comments extends React.Component {
   constructor(props) {
     super(props);
     console.log(props);
-    this.state = {
-      likes: []
-    };
+    this.state = {};
   }
 
-  renderLikes = () => {
-    let commentLikes = this.props.likes.filter(
-      like => like.comment_id === this.props.comment.id
-    );
-    // this.setState({
-    //   likes: commentLikes
-    // });
-    return <Likes likes={commentLikes} commentId={this.props.comment.id} />;
-  };
+  // renderLikes = () => {
+  //   let commentLikes = this.props.likes.filter(
+  //     like => like.comment_id === this.props.comment.id
+  //   );
+  //   // this.setState({
+  //   //   likes: commentLikes
+  //   // });
+  //   return <Likes likes={commentLikes} commentId={this.props.comment.id} />;
+  // };
 
   renderDate = () => {
     let date = new Date(this.props.comment.created_at);
@@ -40,7 +38,12 @@ class Comments extends React.Component {
             <h3>{this.props.comment.user_username}</h3>
             {this.renderDate()}
             <p>{this.props.comment.content}</p>
-            {this.renderLikes()}
+            <Likes
+              likes={this.props.likes.filter(
+                like => like.comment_id === this.props.comment.id
+              )}
+              commentId={this.props.comment.id}
+            />
             {/* start comment reply chain here */}
           </li>
         </ul>
