@@ -12,17 +12,13 @@ class Likes extends React.Component {
       hasLiked: false
     };
   }
-  // must be logged in to Like comment
-  // ON DELETE LIKE dispatch action with likeId to delete from store
-  //      With DELETE fetch to API.
-  // dispatch for new like and create to api
 
   toggleLiked = async () => {
     this.setState({
       triedToLike: false,
       hasLiked: !this.state.hasLiked
     });
-    // not repopulating with async api call.
+
     if (this.state.hasLiked) {
       const like = this.props.likes.find(
         like => like.user_id === this.props.user.id
