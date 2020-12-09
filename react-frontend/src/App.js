@@ -17,18 +17,21 @@ class App extends Component {
       <>
         <div>
           <Router>
-            <div className="login">
+            <div className="bg-gray-100 px-1 py-1">
               <h3 style={{ display: "table", height: "20px", width: "100%" }}>
                 <Link to="/Login">
-                  <button>Login</button>
+                  <button className="bg-indigo-600 w-36 h-15 rounded text-white m-1.5">
+                    Login
+                  </button>
                 </Link>
                 <Link to="/Signup">
-                  <button>Signup</button>
+                  <button className="bg-indigo-600 w-36 h-15 rounded text-white m-1.5">
+                    Signup
+                  </button>
                 </Link>
                 <button
-                  className="logout"
+                  className="bg-yellow-800 w-36 h-15 rounded text-white m-1.5 float-right"
                   onClick={this.logout}
-                  style={{ float: "right" }}
                 >
                   Logout
                 </button>
@@ -38,8 +41,12 @@ class App extends Component {
                   ? `User: ${this.props.user.username}`
                   : ""}
               </h3>
-              <h1 className="App-title">Guru BBQ</h1>
             </div>
+            <Link to="/">
+              <h1 className="text-center font-serif text-6xl text-gray-600 ">
+                Guru BBQ
+              </h1>
+            </Link>
             <br></br>
             <h3 className="buttons">
               <Link to="/Smokers">
