@@ -43,20 +43,26 @@ class App extends Component {
               </h3>
             </div>
             <Link to="/">
-              <h1 className="text-center font-serif text-6xl text-gray-600 ">
+              <h1 className="text-center font-serif text-7xl text-gray-600 ">
                 Guru BBQ
               </h1>
             </Link>
             <br></br>
-            <h3 className="buttons">
+            <h3 className="flex justify-around w-100%">
               <Link to="/Smokers">
-                <button className="button">Smokers</button>
+                <button className="bg-gray-100 flex-intial w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  Smokers
+                </button>
               </Link>
               <Link to="/Meats">
-                <button className="button">Meats</button>
+                <button className="bg-gray-100 w-60 h-25 items-center  py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  Meats
+                </button>
               </Link>
               <Link to="/Rubs&Sauces">
-                <button className="button">Rubs / Sauces</button>
+                <button className="bg-gray-100 w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  Rubs / Sauces
+                </button>
               </Link>
             </h3>
 
