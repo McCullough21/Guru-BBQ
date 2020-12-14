@@ -46,6 +46,7 @@ class User extends React.Component {
           onSubmit={event => {
             this.handleSubmit(event);
           }}
+          className="m-5"
         >
           <label>
             Username:
@@ -54,6 +55,8 @@ class User extends React.Component {
               name="username"
               value={this.state.username}
               onChange={event => this.handleChange(event)}
+              className="w-50 px-3 py-2 border m-2 border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Username"
             />
           </label>
           <br></br>
@@ -64,10 +67,16 @@ class User extends React.Component {
               name="password"
               value={this.state.password}
               onChange={event => this.handleChange(event)}
+              className="w-50 px-3 py-2 border m-2 border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Password"
             />
           </label>
           <br></br>
-          <input type="submit" value={this.props.actionType} />
+          <input
+            type="submit"
+            value={this.props.actionType}
+            className="ml-1 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          />
         </form>
       </div>
     );
