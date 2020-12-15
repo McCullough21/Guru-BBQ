@@ -37,8 +37,8 @@ export default function Ribs(props) {
   };
   return (
     <>
-      <h2 style={{ textAlign: "center" }}>RIBS</h2>
-      <div style={{ display: "table", height: "200px", width: "100%" }}>
+      <h2 className="text-center text-2xl m-4">RIBS</h2>
+      <div className="flex">
         <ReactPlayer
           url="https://www.youtube.com/watch?v=kRe0WymG1Jk"
           style={{
@@ -47,14 +47,10 @@ export default function Ribs(props) {
           }}
         />
       </div>
-      <div
-        style={{
-          width: "90%",
-
-          padding: "15px"
-        }}
-      >
-        <h3>Cooking Instructions:</h3>
+      <div className="flex-col justify-items-center w-100% mr-10 ml-10">
+        <h3 className="py-3 m-3 text-lg font-bold underline">
+          Cooking Instructions
+        </h3>
         <p>{ribs.cooking}</p>
       </div>
 

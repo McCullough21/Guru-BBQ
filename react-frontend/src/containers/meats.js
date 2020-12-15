@@ -59,21 +59,33 @@ class Meats extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 style={{ textAlign: "center" }}>MEATS</h1>
+      <>
+        <div>
+          <h1 className="text-4xl font-bold font-gray-700 text-center m-10">
+            MEATS
+          </h1>
+        </div>
         <div>
           <Router>
-            <nav style={{ display: "flex", justifyContent: "center" }}>
-              <Link to="/Ribs">
-                <button name="ribs" style={{ marginRight: "50px" }}>
-                  St. Louis-Style Ribs
-                </button>
-              </Link>
-              <Link to="/PorkButt">
-                <button name="porkButt" style={{ marginLeft: "50px" }}>
-                  Pork Butt
-                </button>
-              </Link>
+            <nav>
+              <div className="flex justify-around w-100%">
+                <Link to="/Ribs">
+                  <button
+                    name="ribs"
+                    className="bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-md font-bold"
+                  >
+                    St. Louis-Style Ribs
+                  </button>
+                </Link>
+                <Link to="/PorkButt">
+                  <button
+                    name="porkButt"
+                    className="bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-md font-bold"
+                  >
+                    Pork Butt
+                  </button>
+                </Link>
+              </div>
             </nav>
             <Switch>
               <Route path="/Ribs">
@@ -101,7 +113,7 @@ class Meats extends React.Component {
             </Switch>
           </Router>
         </div>
-      </div>
+      </>
     );
   }
 }
