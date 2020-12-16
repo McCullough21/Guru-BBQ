@@ -51,17 +51,17 @@ class App extends Component {
             <div className="bg-yellow-600 py-5 bg-opacity-50">
               <h3 className="flex justify-around w-100% mx-40">
                 <Link to="/Smokers">
-                  <button className="bg-gray-100  flex-intial w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  <button className="bg-gray-100  flex-intial w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100 focus:ring-indigo-500 opacity-80 text-2xl">
                     Smokers
                   </button>
                 </Link>
                 <Link to="/Meats">
-                  <button className="bg-gray-100  w-60 h-25 items-center  py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  <button className="bg-gray-100  w-60 h-25 items-center  py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 hover:opacity-100 focus:opacity-100 opacity-80 text-2xl">
                     Meats
                   </button>
                 </Link>
                 <Link to="/Rubs&Sauces">
-                  <button className="bg-gray-100  w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-indigo-500 text-2xl">
+                  <button className="bg-gray-100  w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100 focus:ring-indigo-500 opacity-80 text-2xl">
                     Rubs / Sauces
                   </button>
                 </Link>
