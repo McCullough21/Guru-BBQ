@@ -68,7 +68,7 @@ class Meats extends React.Component {
         <div>
           <Router>
             <nav>
-              <div className="flex justify-around w-100% mx-96">
+              <div className="flex justify-around w-100% mx-80">
                 <Link to="/Ribs">
                   <button
                     name="ribs"
