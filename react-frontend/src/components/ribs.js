@@ -50,11 +50,14 @@ export default function Ribs(props) {
         </div>
       </div>
 
-      <br></br>
-      <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
-      {formDisplay()}
+      <div className="flex pt-6">
+        <h3 className="font-serif text-lg text-red-700 ml-10 pb-10">
+          {props.loggedIn()}
+        </h3>
+        {formDisplay()}
 
-      {renderComments()}
+        {renderComments()}
+      </div>
     </>
   );
 }

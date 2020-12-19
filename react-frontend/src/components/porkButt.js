@@ -13,25 +13,33 @@ export default function PorkButt(props) {
   const formDisplay = () => {
     if (!props.loggedIn()) {
       return (
-        <form
-          name={props.meatType}
-          onSubmit={event => {
-            props.submit(event);
-          }}
-        >
-          <label>
-            New Comment <br></br>
-            <input
-              type="text"
-              style={{ height: "120px", width: "300px" }}
-              onChange={event => {
-                props.input(event);
-              }}
-              value={props.currentState}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <div className="flex-col w-96 p-2">
+          <form
+            className="flex-col"
+            name={props.meatType}
+            onSubmit={event => {
+              props.submit(event);
+            }}
+          >
+            <h3 className="text-lg left-0 top-0 pb-2">New Comment</h3>
+            <div className="flex-row relative">
+              <input
+                type="text"
+                onChange={event => {
+                  props.input(event);
+                }}
+                className="w-2/3 h-20 border shadow"
+                value={props.currentState}
+              />
+
+              <input
+                className=" shadow border absolute items-center rounded p-1 ml-6 bottom-0"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+        </div>
       );
     }
   };
@@ -53,12 +61,13 @@ export default function PorkButt(props) {
         </div>
       </div>
 
-      <br></br>
-      <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
-      {/* <button onClick={() => sortComments()}>Sort Comments</button> */}
-      {formDisplay()}
-
-      {renderComments()}
+      <div className="flex pt-6">
+        <h3 className="font-serif text-lg text-red-700 ml-10 pb-10">
+          {props.loggedIn()}
+        </h3>
+        {formDisplay()}
+      </div>
+      <div>{renderComments()}</div>
     </>
   );
 }
