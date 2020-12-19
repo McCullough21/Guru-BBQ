@@ -60,12 +60,11 @@ class Meats extends React.Component {
   render() {
     return (
       <>
-        <div>
-          <h1 className="text-4xl font-bold font-gray-700 text-center m-10">
+        {/* <h1 className="text-4xl font-bold font-gray-700 text-center m-10">
             MEATS
-          </h1>
-        </div>
-        <div>
+          </h1> */}
+
+        <div className="p-3">
           <Router>
             <nav>
               <div className="flex justify-around w-100% mx-80">

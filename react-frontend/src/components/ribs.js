@@ -37,26 +37,21 @@ export default function Ribs(props) {
   };
   return (
     <>
-      <h2 className="text-center text-2xl m-4">RIBS</h2>
-      <div className="flex">
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=kRe0WymG1Jk"
-          style={{
-            display: "block",
-            margin: "auto"
-          }}
-        />
-      </div>
-      <div className="flex-col justify-items-center w-100% mr-10 ml-10">
-        <h3 className="py-3 m-3 text-lg font-bold underline">
-          Cooking Instructions
-        </h3>
-        <p>{ribs.cooking}</p>
+      <div className="flex-col relative p-3 m-6">
+        <h2 className="text-center font-serif font-bold text-3xl m-4">RIBS</h2>
+        <div className="flex absolute relative justify-center pb-2/3">
+          <ReactPlayer url="https://www.youtube.com/watch?v=kRe0WymG1Jk" />
+        </div>
+        <div className="flex-col justify-items-center w-100% mr-10 ml-10">
+          <h3 className="py-3 m-3 text-lg font-bold underline">
+            Cooking Instructions
+          </h3>
+          <p>{ribs.cooking}</p>
+        </div>
       </div>
 
       <br></br>
       <h3 style={{ color: "red" }}>{props.loggedIn()}</h3>
-      {/* <button onClick={() => sortComments()}>Sort Comments</button> */}
       {formDisplay()}
 
       {renderComments()}

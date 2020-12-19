@@ -37,20 +37,18 @@ export default function PorkButt(props) {
   };
 
   return (
-    <div>
-      <h2 style={{ textAlign: "center" }}>PORK BUTT</h2>
-      <div style={{ display: "table", width: "100%" }}>
-        <ReactPlayer
-          style={{ display: "block", margin: "auto" }}
-          url="https://www.youtube.com/watch?v=0DoKvxJh6aM"
-        />
-        <div
-          style={{
-            width: "90%",
-            padding: "15px"
-          }}
-        >
-          <h3>Cooking Instructions:</h3>
+    <>
+      <div className="flex-col relative p-3 m-6">
+        <h2 className="text-center font-serif font-bold text-3xl m-4">
+          PORK BUTT
+        </h2>
+        <div className="flex absolute relative justify-center pb-2/3">
+          <ReactPlayer url="https://www.youtube.com/watch?v=0DoKvxJh6aM" />
+        </div>
+        <div className="flex-col justify-items-center w-100% mr-10 ml-10">
+          <h3 className="py-3 m-3 text-lg font-bold underline">
+            Cooking Instructions
+          </h3>
           <p>{porkButt.cooking}</p>
         </div>
       </div>
@@ -61,6 +59,6 @@ export default function PorkButt(props) {
       {formDisplay()}
 
       {renderComments()}
-    </div>
+    </>
   );
 }
