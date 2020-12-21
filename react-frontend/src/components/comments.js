@@ -33,7 +33,7 @@ class Comments extends React.Component {
   render() {
     return (
       <div className="flex-col bg-gray-200 rounded shadow my-3 w-full">
-        <div className="flex justify-between shadow-inner">
+        <div className="flex justify-between shadow-sm">
           <h3 className="pl-3 py-2 text-sm font-bold">
             User: {this.props.comment.user_username}
           </h3>
