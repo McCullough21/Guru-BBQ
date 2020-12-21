@@ -15,7 +15,7 @@ export default function PorkButt(props) {
       return (
         <div className="flex-col w-96 p-2">
           <form
-            className="flex-col"
+            className="flex-col "
             name={props.meatType}
             onSubmit={event => {
               props.submit(event);
@@ -24,11 +24,12 @@ export default function PorkButt(props) {
             <h3 className="text-lg left-0 top-0 pb-2">New Comment</h3>
             <div className="flex-row relative">
               <input
+                placeholder="Type comment here"
                 type="text"
                 onChange={event => {
                   props.input(event);
                 }}
-                className="w-2/3 h-20 border shadow"
+                className="w-2/3 h-20 box-content p-2 border-2 shadow"
                 value={props.currentState}
               />
 
@@ -67,7 +68,9 @@ export default function PorkButt(props) {
         </h3>
         {formDisplay()}
       </div>
-      <div>{renderComments()}</div>
+      <div className="flex-col justify-items-start w-3/6">
+        {renderComments()}
+      </div>
     </>
   );
 }

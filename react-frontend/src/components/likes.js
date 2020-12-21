@@ -63,11 +63,17 @@ class Likes extends React.Component {
     return (
       <>
         {this.state.hasLiked ? (
-          <button onClick={this.handleClick} style={{ color: "blue" }}>
+          <button
+            onClick={this.handleClick}
+            className="text-xs m-2 px-2 py-1 border-2 rounded shadow-lg bg-indigo-300"
+          >
             Likes: {this.state.likes.length}
           </button>
         ) : (
-          <button onClick={this.handleClick}>
+          <button
+            onClick={this.handleClick}
+            className="text-xs m-2 px-2 py-1 bg-white bg-opacity-70  border-2 shadow-lg rounded"
+          >
             Likes: {this.state.likes.length}
           </button>
         )}
