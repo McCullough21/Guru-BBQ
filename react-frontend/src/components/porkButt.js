@@ -6,7 +6,7 @@ import ReactPlayer from "react-player";
 export default function PorkButt(props) {
   const renderComments = () => {
     return props.comments.map(comment => {
-      return <Comments comment={comment} />;
+      return <Comments comment={comment} key={comment.id} />;
     });
   };
 

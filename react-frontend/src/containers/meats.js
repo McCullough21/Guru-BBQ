@@ -68,7 +68,7 @@ class Meats extends React.Component {
           <nav>
             <div className="p-3 bg-yellow-600 bg-opacity-30">
               <div className="flex justify-around w-100% mx-80">
-                <Link to="/Ribs">
+                <Link to="/Meats/Ribs">
                   <button
                     name="ribs"
                     className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold mx-1"
@@ -76,7 +76,7 @@ class Meats extends React.Component {
                     St. Louis-Style Ribs
                   </button>
                 </Link>
-                <Link to="/PorkButt">
+                <Link to="/Meats/PorkButt">
                   <button
                     name="porkButt"
                     className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold mx-1"
@@ -88,7 +88,7 @@ class Meats extends React.Component {
             </div>
           </nav>
           <Switch>
-            <Route path="/Ribs">
+            <Route path="/Meats/Ribs">
               <Ribs
                 comments={this.popComments("ribs")}
                 input={this.handleChange}
@@ -99,7 +99,7 @@ class Meats extends React.Component {
                 loggedIn={this.logged_in}
               />
             </Route>
-            <Route path="/PorkButt">
+            <Route path="/Meats/PorkButt">
               <PorkButt
                 comments={this.popComments("porkButt")}
                 input={this.handleChange}
