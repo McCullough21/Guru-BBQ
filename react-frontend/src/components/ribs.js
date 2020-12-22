@@ -46,7 +46,7 @@ export default function Ribs(props) {
   };
   return (
     <>
-      <div className="flex-col relative p-3 m-6">
+      <div className="flex-col relative p-3 mx-20 my-6 bg-yellow-400 bg-opacity-20">
         <h2 className="text-center font-serif font-bold text-3xl m-4">RIBS</h2>
         <div className="flex absolute relative justify-center pb-2/3">
           <ReactPlayer url="https://www.youtube.com/watch?v=kRe0WymG1Jk" />
@@ -60,12 +60,12 @@ export default function Ribs(props) {
       </div>
 
       <div className="flex pt-6">
-        <h3 className="font-serif text-lg text-red-700 ml-10 pb-10">
+        <h3 className="font-serif text-lg text-red-700 ml-20 pb-10">
           {props.loggedIn()}
         </h3>
         {formDisplay()}
       </div>
-      <div className="flex-col justify-items-start w-3/6">
+      <div className="flex-col ml-20 justify-items-start w-3/6">
         {renderComments()}
       </div>
     </>

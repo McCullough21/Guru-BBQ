@@ -47,7 +47,7 @@ export default function PorkButt(props) {
 
   return (
     <>
-      <div className="flex-col relative p-3 m-6">
+      <div className="flex-col relative p-3 my-6 mx-20 bg-yellow-400 bg-opacity-20">
         <h2 className="text-center font-serif font-bold text-3xl m-4">
           PORK BUTT
         </h2>
@@ -63,12 +63,12 @@ export default function PorkButt(props) {
       </div>
 
       <div className="flex pt-6">
-        <h3 className="font-serif text-lg text-red-700 ml-10 pb-10">
+        <h3 className="font-serif ml-20 text-lg text-red-700 ml-10 pb-10">
           {props.loggedIn()}
         </h3>
         {formDisplay()}
       </div>
-      <div className="flex-col justify-items-start w-3/6">
+      <div className="flex-col ml-20 justify-items-start w-3/6">
         {renderComments()}
       </div>
     </>
