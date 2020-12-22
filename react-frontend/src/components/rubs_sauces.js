@@ -7,7 +7,12 @@ function RubsSauces() {
   const displayRecipe = type => {
     if (recipe.type === type) {
       return recipe.ingredients.map(ing => {
-        return <li key={ing}>{ing}</li>;
+        return (
+          <li className="text-sm font-serif text-left" key={ing}>
+            {" "}
+            - {ing}
+          </li>
+        );
       });
     }
   };
@@ -15,15 +20,15 @@ function RubsSauces() {
   const populateRubLinks = () => {
     return bbqRubs.map(rub => {
       return (
-        <li key={rub.type} style={{ padding: "15px" }}>
+        <li key={rub.type} className="text-left text-base py-6 pl-20">
           {" "}
           <button
-            style={{ width: "300px", height: "40px" }}
+            className="p-2 hover:bg-red-700 hover:text-white rounded focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50"
             onClick={() => setRecipe(rub)}
           >
             {rub.type}
           </button>
-          <ul>{displayRecipe(rub.type)}</ul>
+          <ul className="p-3">{displayRecipe(rub.type)}</ul>
         </li>
       );
     });
@@ -32,49 +37,39 @@ function RubsSauces() {
   const populateSauceLinks = () => {
     return bbqSauces.map(sauce => {
       return (
-        <li key={sauce.type} style={{ padding: "15px" }}>
+        <li key={sauce.type} className="text-left text-base py-6 pl-20">
           {" "}
           <button
-            style={{ width: "300px", height: "40px" }}
+            className="p-2 hover:bg-red-700 hover:text-white rounded focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50"
             onClick={() => setRecipe(sauce)}
           >
             {sauce.type}
           </button>
-          <ul>{displayRecipe(sauce.type)}</ul>
+          <ul className="p-3">{displayRecipe(sauce.type)}</ul>
         </li>
       );
     });
   };
   return (
-    <div>
-      <h2 style={{ textAlign: "center" }}>RUBS & SAUCES</h2>
-      <div style={{ display: "table", height: "300px", width: "100%" }}>
-        <div
-          style={{
-            display: "column",
-            width: "40%",
-            float: "left",
-            padding: "15px"
-          }}
-        >
-          <h1>Dry Rubs</h1>
-          <br></br>
-          <ul className="rubs">{populateRubLinks()}</ul>
+    <>
+      <div className="bg-red-500 bg-opacity-95 my-2 mx-3">
+        <h2 className="text-xl font-serif bold p-3 text-center">
+          RUBS & SAUCES
+        </h2>
+      </div>
+      <div className="flex bg-red-500 py-6 bg-opacity-20 mx-10 justify-evenly">
+        <div className="flex-col w-2/4 m-2">
+          <h1 className=" text-center  text-xl underline italic">Dry Rubs</h1>
+
+          <ul className="">{populateRubLinks()}</ul>
         </div>
-        <div
-          style={{
-            display: "column",
-            width: "45%",
-            float: "right",
-            padding: "15px"
-          }}
-        >
-          <h1>Sauces</h1>
-          <br></br>
-          <ul className="sauces">{populateSauceLinks()}</ul>
+        <div className="flex-col w-2/4 m-2">
+          <h1 className="text-center  text-xl underline italic">Sauces</h1>
+
+          <ul className="">{populateSauceLinks()}</ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
