@@ -71,7 +71,7 @@ class Meats extends React.Component {
                 <Link to="/Ribs">
                   <button
                     name="ribs"
-                    className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold"
+                    className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold mx-1"
                   >
                     St. Louis-Style Ribs
                   </button>
@@ -79,7 +79,7 @@ class Meats extends React.Component {
                 <Link to="/PorkButt">
                   <button
                     name="porkButt"
-                    className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold"
+                    className="opacity-100 bg-opacity-70 bg-gray-100 flex-intial w-44 h-14 items-center border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 text-md font-bold mx-1"
                   >
                     Pork Butt
                   </button>

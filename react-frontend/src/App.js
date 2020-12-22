@@ -15,30 +15,36 @@ class App extends Component {
   render() {
     return (
       <>
-        <div>
+        <div className="pb-20">
           <Router>
             <div className="py-2">
-              <h3>
-                <Link to="/Login">
-                  <button className="bg-red-500 w-36 h-15 rounded text-white m-1.5">
-                    Login
+              {!this.props.user.username ? (
+                <h3 className="pl-4">
+                  <Link to="/Login">
+                    <button className="bg-red-500 w-36 h-15 rounded text-white m-1.5">
+                      Login
+                    </button>
+                  </Link>
+                  <Link to="/Signup">
+                    <button className="bg-red-500 w-36 h-15 rounded text-white m-1.5">
+                      Signup
+                    </button>
+                  </Link>
+                </h3>
+              ) : (
+                <h3>
+                  <button
+                    className="bg-yellow-800 w-36 h-15 rounded text-white m-1.5 float-right"
+                    onClick={this.logout}
+                  >
+                    Logout
                   </button>
-                </Link>
-                <Link to="/Signup">
-                  <button className="bg-red-500 w-36 h-15 rounded text-white m-1.5">
-                    Signup
-                  </button>
-                </Link>
-                <button
-                  className="bg-yellow-800 w-36 h-15 rounded text-white m-1.5 float-right"
-                  onClick={this.logout}
-                >
-                  Logout
-                </button>
-              </h3>
-              <h3 style={{ textAlign: "right", marginRight: "10%" }}>
+                </h3>
+              )}
+
+              <h3 className="float-left text-base font-serif italic pl-10 pt-2 text-gray-400">
                 {this.props.user.username
-                  ? `User: ${this.props.user.username}`
+                  ? `Welcome: ${this.props.user.username}`
                   : ""}
               </h3>
             </div>
@@ -54,17 +60,17 @@ class App extends Component {
             <div className="bg-yellow-600 py-5 bg-opacity-50">
               <h3 className="flex justify-around w-100% mx-40">
                 <Link to="/Smokers">
-                  <button className="bg-gray-100 w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100  focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 opacity-80 text-2xl">
+                  <button className="bg-gray-100 w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100  focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 opacity-80 text-2xl mx-1">
                     Smokers
                   </button>
                 </Link>
                 <Link to="/Meats">
-                  <button className="bg-gray-100  w-60 h-25 items-center  py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 hover:opacity-100 focus:opacity-100 opacity-80 text-2xl">
+                  <button className="bg-gray-100  w-60 h-25 items-center  py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 hover:opacity-100 focus:opacity-100 opacity-80 text-2xl mx-1">
                     Meats
                   </button>
                 </Link>
                 <Link to="/Rubs&Sauces">
-                  <button className="bg-gray-100  w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 opacity-80 text-2xl">
+                  <button className="bg-gray-100  w-60 h-25 items-center py-3 border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50 hover:opacity-100 focus:opacity-100 focus:ring-4 focus:ring-red-900 focus:outline-none focus:ring-opacity-50 opacity-80 text-2xl mx-1">
                     Rubs / Sauces
                   </button>
                 </Link>
