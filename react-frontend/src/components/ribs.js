@@ -29,7 +29,7 @@ export default function Ribs(props) {
                 onChange={event => {
                   props.input(event);
                 }}
-                className="w-2/3 h-20 box-content p-2 border-2 shadow"
+                className="w-2/3 h-20 box-content p-2 border-2 rounded shadow"
                 value={props.currentState}
               />
 
