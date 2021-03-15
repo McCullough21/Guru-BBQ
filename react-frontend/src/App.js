@@ -49,7 +49,7 @@ class App extends Component {
                   : ""}
               </h3>
             </div>
-            <div className="flex relative justify-center">
+            <div className="flex h-full relative justify-center">
               <Link to="/">
                 <img alt="title" src={logo} />
               </Link>
