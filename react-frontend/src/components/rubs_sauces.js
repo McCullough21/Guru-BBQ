@@ -52,7 +52,7 @@ function RubsSauces() {
   };
   return (
     <>
-      <div className="bg-red-500 bg-opacity-95 my-2 mx-3">
+      <div className="bg-red-500 bg-opacity-95 my-2 mx-10">
         <h2 className="text-xl font-serif bold p-3 text-center">
           RUBS & SAUCES
         </h2>

@@ -57,7 +57,6 @@ class Comments extends React.Component {
   }
 }
 
-// MAPstatetoprops changing when store changes, wont rerender likes
 const mapStateToProps = state => {
   console.log(state.likes);
   return {

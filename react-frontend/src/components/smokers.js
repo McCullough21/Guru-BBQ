@@ -20,22 +20,22 @@ function Smokers() {
 
     //     </div>
 
-    <div className="flex mt-10">
-      <div className="flex-col relative border bg-gray-100 p-4 shadow m-2">
+    <div className="flex justify-around justify-center my-10">
+      <div className="flex-col max-w-md relative border bg-gray-100 p-4 shadow m-2">
         <h2 className="text-4xl italic font-bold p-4 text-center">
           {offSet.type}
         </h2>
-        <div className="flex absolute relative justify-center pb-2/3">
+        <div className="flex max-h-96 max-w-md relative justify-center pb-2/3">
           <img src={offSet.img} alt="offSet" />
         </div>
         <h4 className="m-4 py-4 text-xl font-light">{offSet.description}</h4>
       </div>
 
-      <div className="flex-col relative border bg-gray-100 p-4 shadow m-2">
+      <div className="flex-col max-w-md relative border bg-gray-100 p-4 shadow m-2">
         <h2 className="text-4xl italic font-bold py-4 text-center">
           {drumSmoker.type}
         </h2>
-        <div className="flex absolute relative justify-center pb-2/3">
+        <div className="flex max-h-96 max-w-md relative justify-center pb-2/3">
           <img src={drumSmoker.img} alt="offSet" />
         </div>
         <h4 className="m-4 py-4 text-xl font-light">

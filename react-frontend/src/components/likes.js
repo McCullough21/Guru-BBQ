@@ -65,7 +65,7 @@ class Likes extends React.Component {
         {this.state.hasLiked ? (
           <button
             onClick={this.handleClick}
-            className="text-xs m-2 px-2 py-1 border-2 rounded shadow-lg bg-indigo-300"
+            className="text-xs m-2 px-2 py-1 rounded  bg-indigo-300"
           >
             Likes: {this.state.likes.length}
           </button>

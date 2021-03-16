@@ -6,6 +6,7 @@ import Recipes from "./components/rubs_sauces";
 import Meats from "./containers/meats";
 import User from "./containers/User";
 import { connect } from "react-redux";
+import logo from "./assets/logo.png";
 
 class App extends Component {
   logout = () => {
@@ -48,12 +49,9 @@ class App extends Component {
                   : ""}
               </h3>
             </div>
-            <div className="flex justify-center w-full">
+            <div className="flex h-full relative justify-center">
               <Link to="/">
-                <img
-                  alt="title"
-                  src="https://lh3.googleusercontent.com/mq7lh-FztIynAUDkWhUInj6aad7htCXU2XxpiRbOkAHCmzeLtXEB6VI5Cp9x7ALjotg9dEfK2GSSWF2Ag-8adJaLoGGkvxILag4iD16NpytNdTrr-Ls0TD6GjaJjrm7ZLaGw5uU0DP95LGVwNSQs9kE8q_pPAZR7ChO0pQ1W2U6hZrVMGkegqC1xNAKkf3GxC8DzlQGgh8qgsWZ6b1nYKT_au4ZF2kx1BVDlow1JgVJVZ7wy5VoTSQal5F9TdQ0gVWG4bSoj0Dz8IlUv8rR61htNzQOrudZWNOotSJRa__hNPxD1_uGyCF1KkOTNkC2sWzXQk4-cGxC0ZxStCOopSiZ414EHCDfK6WeQXa9bZuxVnC2OIFJfQBGSWp3x4AT0TQTQjXQdw8AAe_QdP1G1Ellmu0MR0UH72HxmoUMuOWigSZSrUDhS9WgPzBMDPvbvhju-_jVZU_OjxBdTTFH3r5RLTkmLMM6121eeObl9wsjLlW-jMWrgY4weDZbodTuN0AIZaL4UJgMonEwPFF25hdG-ZX6aKPkldW0jhTiVHzZPG_hELx3ejG5uMKGt7iggw1Mi5zrG1FX57pDhTQVSkffgo5jOn-5oaCHKB_MbTmU9KL9HWDU7ruzR19rdzb-W-uBJYMJRGVADXHsMr--bMXByiktCja7IxjWMnKdOuPwk2SzjYUYUJQ=w410-h174-no?authuser=0"
-                />
+                <img alt="title" src={logo} />
               </Link>
             </div>
 
