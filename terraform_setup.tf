@@ -26,18 +26,38 @@ resource "aws_route_table" "guru-route" {
   }
 }
 
-resource "aws_subnet" "guru-subnet" {
+resource "aws_subnet" "guru-subnet-public" {
+  vpc_id     = aws_vpc.guru-vpc.id
+  cidr_block = "10.0.0.0/24"
+  availability_zone = "us-east-2a"
+
+  tags = {
+    Name = "Guru_Public"
+  }
+}
+
+resource "aws_subnet" "guru-subnet-private-1" {
   vpc_id     = aws_vpc.guru-vpc.id
   cidr_block = "10.0.1.0/24"
   availability_zone = "us-east-2a"
 
   tags = {
-    Name = "Main"
+    Name = "Guru_Private_1"
   }
-}
+} 
+
+resource "aws_subnet" "guru-subnet-private-2" {
+  vpc_id     = aws_vpc.guru-vpc.id
+  cidr_block = "10.0.2.0/24"
+  availability_zone = "us-east-2b"
+
+  tags = {
+    Name = "Guru_Private_2"
+  }
+} 
 
 resource "aws_route_table_association" "a" {
-  subnet_id      = aws_subnet.guru-subnet.id
+  subnet_id      = aws_subnet.guru-subnet-public.id
   route_table_id = aws_route_table.guru-route.id
 }
 
@@ -81,7 +101,7 @@ resource "aws_security_group" "allow-web" {
 }
 
 resource "aws_network_interface" "guru-nic" {
-  subnet_id       = aws_subnet.guru-subnet.id
+  subnet_id       = aws_subnet.guru-subnet-public.id
   private_ips     = ["10.0.1.50"]
   security_groups = [aws_security_group.allow-web.id]
 
