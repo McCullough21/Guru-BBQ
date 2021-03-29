@@ -1,5 +1,6 @@
 .env
-terraform.tfvars
-variables.tf
+/terraform/terraform.tfvars
+/terraform/variables.tf
 .terraform/
+
 
