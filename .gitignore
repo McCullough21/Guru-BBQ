@@ -1,6 +1,6 @@
 .env
-/terraform/terraform.tfvars
-/terraform/variables.tf
+/terraform/network/terraform.tfvars
+/terraform/network/variables.tf
 .terraform/
 
 
