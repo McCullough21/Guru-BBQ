@@ -157,7 +157,7 @@ resource "aws_eip" "guru-eip" {
 }
 resource "aws_key_pair" "guru-bbq-key" {
   key_name = "guru-bbq-key"
-  public_key = file("../guru_bbq.pem")
+  public_key = file("./guru_bbq.pem")
 }
 
 resource "aws_instance" "guru-server-instance" {
