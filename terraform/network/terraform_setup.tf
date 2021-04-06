@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-east-2"
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_KEY
+  access_key = var.IAM_ACCESS_KEY_ID
+  secret_key = var.IAM_SECRET_KEY
 }
 
 resource "aws_vpc" "guru-vpc" { 
@@ -110,21 +110,21 @@ resource "aws_security_group" "allow-internal" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["aws_vpc.guru-vpc.cidr_block"]
+    cidr_blocks = [aws_vpc.guru-vpc.cidr_block]
   }
   ingress {
     description = "HTTP"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["aws_vpc.guru-vpc.cidr_block"]
+    cidr_blocks = [aws_vpc.guru-vpc.cidr_block]
   }
   ingress {
     description = "SSH"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["aws_vpc.guru-vpc.cidr_block"]
+    cidr_blocks = [aws_vpc.guru-vpc.cidr_block]
   }
 
   egress {
@@ -141,7 +141,7 @@ resource "aws_security_group" "allow-internal" {
 
 resource "aws_network_interface" "guru-nic" {
   subnet_id       = aws_subnet.guru-subnet-public.id
-  private_ips     = ["10.0.1.50"]
+  private_ips     = ["10.0.0.50"]
   security_groups = [aws_security_group.allow-web.id]
 
 #   attachment {
@@ -152,22 +152,25 @@ resource "aws_network_interface" "guru-nic" {
 
 resource "aws_eip" "guru-eip" {
   network_interface = aws_network_interface.guru-nic.id
-  private_ips = "10.0.1.50"
   vpc      = true
   depends_on = [aws_internet_gateway.guru-aig]
+}
+resource "aws_key_pair" "guru-bbq-key" {
+  key_name = "guru-bbq-key"
+  public_key = file("../guru_bbq.pem")
 }
 
 resource "aws_instance" "guru-server-instance" {
     ami = "ami-08962a4068733a2b6"
     instance_type = "t2.micro"
     availability_zone = "us-east-2a"
-    key_name = "main-guru"
+    key_name = aws_key_pair.guru-bbq-key.key_name
 
     network_interface {
         device_index = 0
         network_interface_id = aws_network_interface.guru-nic.id
     }
-    user_data = << EOF
+    user_data = <<EOF
         #!/bin/bash 
         apt-get -y update 
         apt-get -y install ruby 
@@ -178,7 +181,5 @@ resource "aws_instance" "guru-server-instance" {
         chmod +x ./install 
         ./install auto
       EOF
-
-
 }
 
