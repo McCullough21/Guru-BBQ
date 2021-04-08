@@ -1,6 +1,11 @@
 .env
-/terraform/network/terraform.tfvars
-/terraform/network/variables.tf
+/terraform/.terraform
+/terraform/.terraform.lock.hcl
+/terraform/terraform.tfvars
+/terraform/variables.tf
 .terraform/
-
-
+/terraform/guru_bbq.key
+/terraform/guru_bbq.pem
+/terraform/main-guru-key-pair.pem
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup
