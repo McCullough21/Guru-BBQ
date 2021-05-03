@@ -1,7 +1,7 @@
 export const fetchComments = () => {
   return dispatch => {
     dispatch({ type: "LOADING_COMMENTS" });
-    fetch("http://localhost:3000/comments")
+    fetch("http://localhost:3001/comments")
       .then(response => {
         return response.json();
       })
@@ -14,7 +14,7 @@ export const fetchComments = () => {
 
 export const postComment = async (username, id, content, meat) => {
   console.log(username, id, content);
-  await fetch("http://localhost:3000/comments", {
+  await fetch("http://localhost:3001/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export const postComment = async (username, id, content, meat) => {
 
 export const fetchLikes = () => {
   return dispatch => {
-    fetch("http://localhost:3000/likes")
+    fetch("http://localhost:3001/likes")
       .then(response => {
         return response.json();
       })
@@ -46,7 +46,7 @@ export const fetchLikes = () => {
 export const deleteLike = likeId => {
   console.log(likeId);
   return dispatch => {
-    fetch(`http://localhost:3000/likes/${likeId}`, {
+    fetch(`http://localhost:3001/likes/${likeId}`, {
       method: "DELETE"
     });
     dispatch({ type: "DELETE_LIKE", id: likeId });
@@ -54,7 +54,7 @@ export const deleteLike = likeId => {
 };
 export const newLike = (userId, commentId) => {
   return async dispatch => {
-    await fetch("http://localhost:3000/likes", {
+    await fetch("http://localhost:3001/likes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export const userLogin = (username, password) => {
   console.log(username);
   console.log(password);
   return dispatch => {
-    fetch(`http://localhost:3000/users/${username}/${password}`)
+    fetch(`http://localhost:3001/users/${username}/${password}`)
       .then(response => {
         return response.json();
       })
@@ -89,7 +89,7 @@ export const userLogin = (username, password) => {
 
 export const userSignup = (username, password) => {
   return dispatch => {
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:3001/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

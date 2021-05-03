@@ -1,0 +1,31 @@
+version: "2"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: gurudbcon
+    environment:
+      MYSQL_DATABASE: <%= ENV['DB_NAME'] %>
+      MYSQL_USER: <%= ENV['DB_USER'] %>
+      MYSQL_PASSWORD: <%= ENV['DB_PASSWORD'] %>
+      MYSQL_ROOT_PASSWORD: <%= ENV['DB_PASSWORD'] %>
+
+    ports:
+      - "3306:3306"
+
+  app:
+    build: .
+    command: bundle exec rails s -p 3000 -b "0.0.0.0"
+    volumes:
+      - ".:/rails-backend"
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_USER: <%= ENV['DB_USER'] %>
+      DB_NAME: <%= ENV['DB_NAME'] %>
+      DB_PASSWORD: <%= ENV['DB_PASSWORD'] %>
+      DB_SERVER: gurudbcon
